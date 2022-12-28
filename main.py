@@ -8,11 +8,19 @@ def createData(difficulty):
         num_of_job_types, num_of_employees, friendship_percentage = 30, 30, 0.8
     elif difficulty == "hard":
         num_of_job_types, num_of_employees, friendship_percentage = 30, 100, 0.6
+    elif difficulty == "test":
+        num_of_job_types, num_of_employees, friendship_percentage = 2, 4, 0.5
     else:
         print ("please insert one of the following: \"easy\" / \"medium\" / \"hard\"")
         return
-    two_dim_array = np.random.choice(2, size=(num_of_job_types, num_of_employees),
-                           p=[1 - friendship_percentage, friendship_percentage])
+    two_dim_array = np.zeros((num_of_job_types*num_of_employees, num_of_job_types*num_of_employees))
+    for i in range(num_of_job_types):
+        for j in range(i+1,num_of_job_types):
+            for k in range(num_of_employees):
+                for l in range(num_of_employees):
+                    #print(i*num_of_employees+k,j*num_of_employees+l) #print indexes
+                    two_dim_array[i*num_of_employees+k][j*num_of_employees+l]=np.random.choice([0,1], 1, p=[1-friendship_percentage,friendship_percentage])
+    # print("total vertices: " ,np.sum(two_dim_array))
     np.savetxt("writtenData/" + difficulty + ".txt", two_dim_array, delimiter=',', fmt='%d')
 
 
@@ -28,5 +36,5 @@ def readData(file_name):
 
 
 if __name__ == '__main__':
-    createData("easy")  # easy/medium/hard
-    readData("easy")
+    #createData("hard")  # easy/medium/hard
+    readData("hard")
