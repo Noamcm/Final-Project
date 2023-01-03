@@ -21,13 +21,15 @@ def createData(difficulty):
                     #print(i*num_of_employees+k,j*num_of_employees+l) #print indexes
                     two_dim_array[i*num_of_employees+k][j*num_of_employees+l]=np.random.choice([0,1], 1, p=[1-friendship_percentage,friendship_percentage])
     # print("total vertices: " ,np.sum(two_dim_array))
+    #toodo : transfer two_dim_array to nx library graph
     np.savetxt("writtenData/" + difficulty + ".txt", two_dim_array, delimiter=',', fmt='%d')
 
 
 def readData(file_name):
     try:
         data = np.loadtxt("writtenData/" + file_name + ".txt", delimiter=',').astype(int)  # reads as int instead float
-        print(data)
+        print(data.size)
+        print("total vertices: " ,np.sum(data))
     except OSError:
         print("File name does not exist")
     except Exception as e:
