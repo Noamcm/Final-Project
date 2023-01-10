@@ -1,5 +1,6 @@
 import numpy as np
-
+import DataFunctions
+import SimpleGreedy
 
 def createData(difficulty):
     if difficulty == "easy":
@@ -34,7 +35,10 @@ def readData(file_name):
         print(e)
 
 
-
 if __name__ == '__main__':
-    #createData("hard")  # easy/medium/hard
-    readData("hard")
+    g = DataFunctions.createGraph()
+    type_empID_dict = {1: [1, 2, 3],
+                       2: [4, 5, 6],
+                       3: [7, 8, 9],
+                       4: [10, 11, 12]}
+    sol = SimpleGreedy.solve(g, type_empID_dict)
