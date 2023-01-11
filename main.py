@@ -95,11 +95,11 @@ def to_graph(matrix, title: str = ""):
 
 
 if __name__ == '__main__':
-    level = "hard"  # easy/medium/hard
+    level = "easy"  # easy/medium/hard
     matrix = createData(level)
     matrix = readData(level)
     if matrix.any():
-        figure_collision_matrix(matrix)
+        figure_collision_matrix(matrix, level)
         to_graph(matrix, level)
 
     g = DataFunctions.createGraph()
