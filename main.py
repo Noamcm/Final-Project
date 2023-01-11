@@ -11,6 +11,7 @@ import SimpleGreedy
 
 
 def createData(difficulty):
+    plantSolution =True
     if difficulty == "easy":
         num_of_job_types, num_of_employees, friendship_percentage = 10, 10, 0.95
     elif difficulty == "medium":
@@ -22,7 +23,14 @@ def createData(difficulty):
     else:
         print("please insert one of the following: \"easy\" / \"medium\" / \"hard\"")
         return
+
+
+    type_empID_dict={}
+    for i in range(num_of_job_types):
+        type_empID_dict[i]=list(np.arange(i*num_of_employees, i*num_of_employees+num_of_employees, 1, int))
+
     two_dim_array = np.zeros((num_of_job_types * num_of_employees, num_of_job_types * num_of_employees))
+
     possible_friends = []
     for i in range(num_of_job_types):
         for j in range(num_of_job_types):
@@ -38,6 +46,15 @@ def createData(difficulty):
     counter = 0
     amount_of_friends = ((math.pow(num_of_job_types * num_of_employees, 2) - num_of_job_types * math.pow(
         num_of_employees, 2)) / 2) * friendship_percentage
+
+    if(plantSolution):
+        amount_of_friends-=num_of_job_types
+        for i in range(0,num_of_job_types*num_of_employees,num_of_job_types):
+            for j in range(i,num_of_job_types*num_of_employees,num_of_job_types):
+                if two_dim_array[i][j]==0:
+                    two_dim_array[i][j]=1
+                    #print(i,j)
+
     # print("amount_of_friends: ", amount_of_friends)
     while counter < amount_of_friends:
         choice = random.choice(possible_friends)
@@ -47,7 +64,7 @@ def createData(difficulty):
     # print("total vertices: ", two_dim_array[two_dim_array == 1].sum())
     # todo : transfer two_dim_array to nx library graph
     np.savetxt("writtenData/" + difficulty + ".txt", two_dim_array, delimiter=',', fmt='%d')
-    return two_dim_array
+    return two_dim_array , type_empID_dict
 
 
 def readData(file_name):
@@ -74,7 +91,7 @@ def figure_collision_matrix(matrix, title: str = ""):
 
     plt.savefig("drawnData/" + title + ".png", bbox_inches='tight')
 
-    #plt.show()
+    plt.show()
     plt.figure().clear()
     plt.close()
     plt.cla()
@@ -91,21 +108,21 @@ def to_graph(matrix, title: str = ""):
     plt.suptitle(title + " graph")
     plt.savefig("graphData/" + title + ".png", bbox_inches='tight')
 
-    #plt.show()
-
+    # plt.show()
+    return G
 
 if __name__ == '__main__':
-    level = "easy"  # easy/medium/hard
-    matrix = createData(level)
-    matrix = readData(level)
+    level = "medium"  # easy/medium/hard
+    matrix,type_empID_dict = createData(level)
+    #matrix = readData(level)
     if matrix.any():
         figure_collision_matrix(matrix, level)
-        to_graph(matrix, level)
-
-    g = DataFunctions.createGraph()
-    type_empID_dict = {1: [1, 2, 3],
-                       2: [4, 5, 6],
-                       3: [7, 8, 9],
-                       4: [10, 11, 12]}
-    sol = SimpleGreedy.solve(g, type_empID_dict)
+        G=to_graph(matrix, level)
+        sol = SimpleGreedy.solve(G, type_empID_dict)
+    #g = DataFunctions.createGraph()
+    # type_empID_dict = {1: [1, 2, 3],
+    #                    2: [4, 5, 6],
+    #                    3: [7, 8, 9],
+    #                    4: [10, 11, 12]}
+    # sol = SimpleGreedy.solve(g, type_empID_dict)
 
