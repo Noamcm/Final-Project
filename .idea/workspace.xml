@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="with visualization and graphs">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SimpleGreedy.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleGreedy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnData/easy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnData/hard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnData/medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnData/test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/easy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/hard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/test.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/easy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/hard.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/medium.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/test.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +174,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1673373161543</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="with visualization and graphs">
+      <created>1673528371721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673528371721</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,15 +208,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="with visualization and graphs" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="matrix.shape" />

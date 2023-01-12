@@ -7,10 +7,6 @@ from matplotlib import pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 import seaborn as sns
 import SimpleGreedy
-import json
-
-from itertools import product
-
 
 class Data:
 
@@ -116,17 +112,17 @@ class Data:
         plt.suptitle(self.difficulty, fontsize=20)
         colors = ("#f0f5f5", "#c1d7d7", "#003300", "#33cccc")
         cmap = LinearSegmentedColormap.from_list("Custom", colors, len(colors))
-        ax = sns.heatmap(self.matrix, cbar=True, cmap=cmap,cbar_kws={"shrink": .75 , "anchor":(0,0)})
+        ax = sns.heatmap(self.matrix, cbar=True, cmap=cmap)
         colorbar = ax.collections[0].colorbar
         colorbar.set_ticks([-1.625, -0.875, -0.125, 0.625])
         colorbar.set_ticklabels(["Symmetry\nunnecessary", "Same job type", "Not friends", "Friends"])
-
-        text = 'Types: ' + str(self.num_of_job_types)+'\n' + 'Employees: ' + str(self.num_of_employees)+ '\n' + 'Friendship pct: '+ str(int(self.friendship_percentage*100))+'%'
-        props = dict(boxstyle='round', facecolor="#f0f5f5", alpha=0.5)
-        plt.text(26, 3, text, fontsize=10, bbox=props)
-
+        plt.plot([], [], ' ', label='Types: ' + str(self.num_of_job_types)+'\n' + 'Employees: ' + str(self.num_of_employees)+ '\n' + 'Friendship pct: '+ str(int(self.friendship_percentage*100))+'%')
+        plt.legend(loc=3)
         plt.savefig("drawnData/" + self.difficulty + ".png", bbox_inches="tight")
-        plt.show()
+        #plt.show()
+        plt.clf()
+        plt.figure().clear()
+        plt.close()
 
     def to_graph(self):
         edges = (list(zip(*np.where(self.matrix == 1))))
@@ -139,22 +135,41 @@ class Data:
             for b in self.solution[idx + 1:]:
                 pairs.append((a, b))
                 pairs.append((b, a))
-        edge_colors = ["red" if e in pairs else "black" for e in self.G.edges()]
+        edge_colors = ["tab:red" if e in pairs else "black" for e in self.G.edges()]
+        node_colors = ["tab:green" if n in self.solution else "tab:blue" for n in self.G.nodes()]
         options = {"linewidths": 0.01}
-        nx.draw_networkx(self.G, nodelist=list(self.G.nodes()), edge_color=edge_colors, **options)
-        plt.suptitle(self.difficulty + " graph")
+        nx.draw_networkx(self.G, nodelist=list(self.G.nodes()), edge_color=edge_colors,node_color=node_colors, **options)
+        plt.suptitle(self.difficulty + " graph", fontsize=20)
+        ColorLegend = {'Friends': 'black', 'Solution': 'red'}
+        f = plt.figure(1)
+        ax = f.add_subplot(1, 1, 1)
+        for label in ColorLegend:
+            ax.plot([0], [0], color=ColorLegend[label], label=label)
+        plt.axis('off')
+        f.set_facecolor('w')
+
+        plt.plot([], [], ' ', label='Types: ' + str(self.num_of_job_types)+'\n' + 'Employees: ' + str(self.num_of_employees)+ '\n' + 'Friendship pct: '+ str(int(self.friendship_percentage*100))+'%'+ '\n' + 'Solution size: '+ str(len(self.solution)))
+        lines = plt.gca().get_lines()
+
+        legend1 = plt.legend([lines[0],lines[1]],[lines[0].get_label(),lines[1].get_label()],loc=1)
+        plt.legend([lines[2]],[lines[2].get_label()],loc=4)
+        plt.gca().add_artist(legend1)
+
         plt.savefig("graphData/" + self.difficulty + ".png", bbox_inches="tight")
 
         #plt.show()
+        plt.clf()
+        plt.figure().clear()
+        plt.close()
 
     def main(self):
-        #self.create_data()
+        self.create_data()
         self.read_data()
         if self.matrix.any():
             self.figure_collision_matrix()
-            #self.G = self.to_graph()
-            #self.solution = SimpleGreedy.solve(self.G, self.type_empID_dict)
-            #self.draw_graph()
+            self.G = self.to_graph()
+            self.solution = SimpleGreedy.solve(self.G, self.type_empID_dict)
+            self.draw_graph()
 
 
 def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_percentage):

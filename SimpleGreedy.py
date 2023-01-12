@@ -68,7 +68,7 @@ def solve(graph, types_emp_id_dict):
     :param types_emp_id_dict: { type1 : [empID_1, empID_2, empID_3], type2 : [empID_4, empID_5, empID_6]...}
     :return: best_clique: list of the vertex of the best max clique we found by "Greedy Algorithm"
     """
-    NUM_OF_ITER = 10
+    NUM_OF_ITER = 100
     best_clique = []
 
     # Greedy Algorithm loop
