@@ -62,43 +62,79 @@ def removeSameTypeEmployees(graph, types_emp_id_dict, node):
         for node in nodes_to_remove:
             graph.remove_node(node)
 
-def solve(graph, types_emp_id_dict):
+def solve(g, types_emp_id_dict):
     """
     :param graph: nx graph
     :param types_emp_id_dict: { type1 : [empID_1, empID_2, empID_3], type2 : [empID_4, empID_5, empID_6]...}
     :return: best_clique: list of the vertex of the best max clique we found by "Greedy Algorithm"
     """
-    NUM_OF_ITER = 100
+    NUM_OF_ITER = 1000
     best_clique = []
-
     # Greedy Algorithm loop
     for i in range(NUM_OF_ITER):
         # copy the original graph & dict
-        g = graph.copy()
         dict_copy = types_emp_id_dict.copy()  # {1: [1, 2 ,3], 2: [4, 5, 6]..}
         cur_clique = []
 
+        shuffledKeysList = list(dict_copy.keys())
+        random.shuffle(shuffledKeysList)
+
         # choose random root
-        v = random.choice(list(g.nodes()))
-        v_friends = g[v].keys()
-        cur_clique.append(v)
+        for empType in shuffledKeysList:
+            empFromSameTypeList = dict_copy[empType]
+            v = random.choice(empFromSameTypeList)
 
-        # as long as possible - add more vertex to the clique
-        while len(v_friends) > 0:
-            removeSameTypeEmployees(g, dict_copy, v)
-            v = getBestNode(g, cur_clique, v_friends)
-
-            if v:
-                v_friends = g[v].keys()
+            if isValid(g, cur_clique, v):
                 cur_clique.append(v)
 
-            else:
-                break
-        print("iter " + str(i) + " - Current Clique: " + str(cur_clique))
-        # print(cur_clique)
+
         # See if the current team is the best we've found so far
         if isBetter(cur_clique, best_clique):
             best_clique = cur_clique
+
+        print("iter " + str(i) + " - Current Clique: " + str(cur_clique))
     print("***** Best Clique: " + str(best_clique) + " *****")
     print("***** Solution length: " + str(len(best_clique)) + " *****")
+    print("***** Num of Iter: " + str(NUM_OF_ITER) + " *****")
     return best_clique
+
+# def solve(graph, types_emp_id_dict):
+#     """
+#     :param graph: nx graph
+#     :param types_emp_id_dict: { type1 : [empID_1, empID_2, empID_3], type2 : [empID_4, empID_5, empID_6]...}
+#     :return: best_clique: list of the vertex of the best max clique we found by "Greedy Algorithm"
+#     """
+#     NUM_OF_ITER = 100
+#     best_clique = []
+#
+#     # Greedy Algorithm loop
+#     for i in range(NUM_OF_ITER):
+#         # copy the original graph & dict
+#         g = graph.copy()
+#         dict_copy = types_emp_id_dict.copy()  # {1: [1, 2 ,3], 2: [4, 5, 6]..}
+#         cur_clique = []
+#
+#         # choose random root
+#         v = random.choice(list(g.nodes()))
+#         v_friends = g[v].keys()
+#         cur_clique.append(v)
+#
+#         # as long as possible - add more vertex to the clique
+#         while len(v_friends) > 0:
+#             removeSameTypeEmployees(g, dict_copy, v)
+#             v = getBestNode(g, cur_clique, v_friends)
+#
+#             if v:
+#                 v_friends = g[v].keys()
+#                 cur_clique.append(v)
+#
+#             else:
+#                 break
+#         print("iter " + str(i) + " - Current Clique: " + str(cur_clique))
+#         # print(cur_clique)
+#         # See if the current team is the best we've found so far
+#         if isBetter(cur_clique, best_clique):
+#             best_clique = cur_clique
+#     print("***** Best Clique: " + str(best_clique) + " *****")
+#     print("***** Solution length: " + str(len(best_clique)) + " *****")
+#     return best_clique

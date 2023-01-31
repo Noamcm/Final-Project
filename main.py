@@ -6,7 +6,11 @@ import networkx as nx
 from matplotlib import pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 import seaborn as sns
+
+import AntColony
+import GA
 import SimpleGreedy
+import time
 
 class Data:
 
@@ -168,7 +172,24 @@ class Data:
         if self.matrix.any():
             self.figure_collision_matrix()
             self.G = self.to_graph()
-            self.solution = SimpleGreedy.solve(self.G, self.type_empID_dict)
+
+            # get the start time
+            st = time.time()
+            algoType = "Greedy"
+            match algoType:
+                case "Greedy":
+                    # Greedy
+                    sol = SimpleGreedy.solve(self.G, self.type_empID_dict)
+
+                case "GA":
+                    sol = GA.solve(self.G, self.type_empID_dict)
+
+                case "Ant colony":
+                    sol = AntColony.solve(self.G, self.type_empID_dict)
+
+            et = time.time()
+            print('Execution time:', et - st, 'seconds')
+            self.solution = sol
             self.draw_graph()
 
 
@@ -181,3 +202,4 @@ def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_per
 if __name__ == "__main__":
     data = Data("Test")  # Test/Easy/Medium/Hard
     data.main()
+
