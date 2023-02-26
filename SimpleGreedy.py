@@ -1,4 +1,5 @@
 import random
+import time
 
 
 def isBetter(cur_clique, best_clique):
@@ -68,10 +69,15 @@ def solve(g, types_emp_id_dict):
     :param types_emp_id_dict: { type1 : [empID_1, empID_2, empID_3], type2 : [empID_4, empID_5, empID_6]...}
     :return: best_clique: list of the vertex of the best max clique we found by "Greedy Algorithm"
     """
-    NUM_OF_ITER = 1000
+    MAX_CLIQUE_SIZE = len(types_emp_id_dict.keys())
+    NUM_OF_ITER = 200000
     best_clique = []
+
+    timeout = time.time() + 3  # 3 sec
     # Greedy Algorithm loop
     for i in range(NUM_OF_ITER):
+        if time.time() > timeout:
+            break
         # copy the original graph & dict
         dict_copy = types_emp_id_dict.copy()  # {1: [1, 2 ,3], 2: [4, 5, 6]..}
         cur_clique = []
@@ -91,11 +97,13 @@ def solve(g, types_emp_id_dict):
         # See if the current team is the best we've found so far
         if isBetter(cur_clique, best_clique):
             best_clique = cur_clique
+            if len(best_clique) == MAX_CLIQUE_SIZE:
+                return best_clique
 
-        print("iter " + str(i) + " - Current Clique: " + str(cur_clique))
-    print("***** Best Clique: " + str(best_clique) + " *****")
-    print("***** Solution length: " + str(len(best_clique)) + " *****")
-    print("***** Num of Iter: " + str(NUM_OF_ITER) + " *****")
+        # print("iter " + str(i) + " - Current Clique: " + str(cur_clique))
+    # print("***** Best Clique: " + str(best_clique) + " *****")
+    # print("***** Solution length: " + str(len(best_clique)) + " *****")
+    # print("***** Num of Iter: " + str(NUM_OF_ITER) + " *****")
     return best_clique
 
 # def solve(graph, types_emp_id_dict):

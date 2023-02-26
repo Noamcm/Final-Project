@@ -10,6 +10,7 @@ import seaborn as sns
 import AntColony
 import GA
 import SimpleGreedy
+import Naive
 import time
 
 class Data:
@@ -29,11 +30,42 @@ class Data:
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 100, 0.6
         elif self.difficulty == "Test":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 5, 5, 0.5
+
+        # Easy
+        elif self.difficulty == "Easy0.9_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 10, 10, 0.9
+        elif self.difficulty == "Easy0.7_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 10, 10, 0.7
+        elif self.difficulty == "Easy0.5_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 10, 10, 0.5
+
+        # Medium
+        elif self.difficulty == "Medium0.9_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.9
+        elif self.difficulty == "Medium0.7_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.7
+        elif self.difficulty == "Medium0.5_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.5
+
+        # Hard
+        elif self.difficulty == "Hard0.9_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.9
+        elif self.difficulty == "Hard0.7_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.7
+        elif self.difficulty == "Hard0.5_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.5
+
+        elif self.difficulty == "AI_Medium":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 15, 15, 0.8
+        elif self.difficulty == "AI_Hard":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.7
+        elif self.difficulty == "AI_VeryHard":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.8
         else:
             print("please insert one of the following: \"easy\" / \"medium\" / \"hard\"")
             return
 
-    def create_data(self):
+    def create_data(self, index):
         writeMetaData(self.difficulty, self.num_of_job_types, self.num_of_employees, self.friendship_percentage)
         self.type_empID_dict = self.write_dict_data()
         self.matrix = np.zeros(
@@ -66,7 +98,7 @@ class Data:
             if self.matrix[choice[0]][choice[1]] == 0:
                 self.matrix[choice[0]][choice[1]] = 1
                 counter += 1
-        np.savetxt("writtenData/" + self.difficulty + ".txt", self.matrix, delimiter=",", fmt="%d")
+        np.savetxt("writtenData/" + self.difficulty + str(index) + ".txt", self.matrix, delimiter=",", fmt="%d")
         return
 
     def write_dict_data(self):
@@ -78,9 +110,9 @@ class Data:
         f.close()
         return self.type_empID_dict
 
-    def read_data(self):
+    def read_data(self, index):
         try:
-            self.matrix = np.loadtxt("writtenData/" + self.difficulty + ".txt", delimiter=",").astype(
+            self.matrix = np.loadtxt("writtenData/" + self.difficulty + str(index) + ".txt", delimiter=",").astype(
                 int)  # reads as int instead float
             self.type_empID_dict = self.read_dict_data()
             self.read_meta_data()
@@ -166,32 +198,75 @@ class Data:
         plt.figure().clear()
         plt.close()
 
-    def main(self):
-        self.create_data()
-        self.read_data()
-        if self.matrix.any():
-            self.figure_collision_matrix()
-            self.G = self.to_graph()
+    def main(self, level_name, algo_types, num_of_files):
+        sol_length = {}
+        run_time = {}
+        for a in algo_types:
+            sol_length[a] = []
+            run_time[a] = []
+        # sol_length = {"Greedy": [], "AntColony": []}
+        # run_time = {"Greedy": [], "AntColony": []}
+        # run_time = {"Greedy": [], "AntColony": [], "Naive": []}
+        # sol_length = {"Greedy": [], "AntColony": [], "Naive": []}
+        # algoType = "AntColony"
+        # algoType = "Greedy"
+        # algoType = "GA"
+        # algoType = "Naive"
+        # algoTypes = ["Greedy", "AntColony", "Naive"]
+        # algoTypes = ["Greedy", "AntColony"]
+        for i in range(num_of_files):
+            # self.create_data(i)
+            self.read_data(i)
 
-            # get the start time
-            st = time.time()
-            algoType = "Greedy"
-            match algoType:
-                case "Greedy":
-                    # Greedy
-                    sol = SimpleGreedy.solve(self.G, self.type_empID_dict)
+            if self.matrix.any():
+                self.figure_collision_matrix()
+                self.G = self.to_graph()
 
-                case "GA":
-                    sol = GA.solve(self.G, self.type_empID_dict)
+                for algoType in algo_types:
+                    # get the start time
+                    st = time.time()
 
-                case "Ant colony":
-                    sol = AntColony.solve(self.G, self.type_empID_dict)
+                    match algoType:
+                        case "Greedy":
+                            # Greedy
+                            sol = SimpleGreedy.solve(self.G, self.type_empID_dict)
 
-            et = time.time()
-            print('Execution time:', et - st, 'seconds')
-            self.solution = sol
-            self.draw_graph()
+                        case "GA":
+                            sol = GA.solve(self.G, self.type_empID_dict)
 
+                        case "AntColony":
+                            sol = AntColony.solve(self.G, self.type_empID_dict)
+
+                        case "Naive":
+                            sol = Naive.solve(self.G, self.type_empID_dict)
+                        case _:
+                            sol = None
+
+                    et = time.time()
+                    print('algoType: ', algoType)
+                    print('Execution time:', et - st, 'seconds')
+                    print("***** Best Clique: " + str(sol) + " *****")
+                    print("***** Solution length: " + str(len(sol)) + " *****")
+                    run_time[algoType].append(et - st)
+                    sol_length[algoType].append(len(sol))
+                    self.solution = list(sol)
+                self.draw_graph()
+
+        with open("results.txt", 'a') as f:
+            f.write(str(level_name) + '\n\n')
+        print(level_name)
+        for algoType in algo_types:
+            print("algoType: ", algoType)
+            print("avg time: ", sum(run_time[algoType]) / len(run_time[algoType]))
+            print("avg size: ", sum(sol_length[algoType]) / len(sol_length[algoType]))
+            print()
+
+            with open("results.txt", 'a') as f:
+                f.write(
+                    "algoType: " + str(algoType) + '\n'
+                    "avg time: " + str(sum(run_time[algoType]) / len(run_time[algoType])) + '\n'
+                    "avg size: " + str(sum(sol_length[algoType]) / len(sol_length[algoType])) + '\n\n'
+                )
 
 def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_percentage):
     with open("metaData/" + difficulty + ".txt", 'w') as f:
@@ -200,6 +275,16 @@ def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_per
 
 
 if __name__ == "__main__":
-    data = Data("Test")  # Test/Easy/Medium/Hard
-    data.main()
+    levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_",
+              "Medium0.9_", "Medium0.7_", "Medium0.5_",
+              "Hard0.9_", "Hard0.7_", "Hard0.5_"]
+    # algorithms = ["Greedy", "AntColony", "Naive"]
+    levels = ["Easy0.9_"]
+    # algorithms = ["Greedy", "AntColony"]
+    # algorithms = ["Naive"]
+    algorithms = ["GA"]
+    num_of_files = 1
+    for level in levels:
+        data = Data(level)  # Test/Easy/Medium/Hard
+        data.main(level, algorithms, num_of_files)
 
