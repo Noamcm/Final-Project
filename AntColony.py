@@ -22,8 +22,8 @@ import itertools
 import random
 import time
 
-N_ANTS = 300
-N_ITERATIONS = 300000
+N_ANTS = 3
+N_ITERATIONS = 4
 PHEROMONE_DEPOSIT = 5
 EVAPORATION_RATE = 0.9
 
@@ -67,8 +67,8 @@ def ant_colony_optimization(graph, d):
 
         # Update the pheromone trail for the edges in the best clique
         update_pheromone_matrix(pheromone_trail, best_clique)
-    #     print("len best_clique: " + str(len(best_clique)))
-    # print("best_clique: " + str(best_clique))
+        print("len best_clique: " + str(len(best_clique)))
+    print("best_clique: " + str(best_clique))
     return best_clique
 
 def _generate_clique(graph, d, pheromone_trail):
@@ -179,4 +179,6 @@ def _select_next_vertex(g, same_type_vertices, clique, d, pheromone_trail):
     random.shuffle(optional_vertices_score_dict_items)
     optional_vertices_score_dict = dict(optional_vertices_score_dict_items)
     # print(neighbors_score_dict)
-    return max(optional_vertices_score_dict, key=optional_vertices_score_dict.get)
+    # next_vertex = max(optional_vertices_score_dict, key=optional_vertices_score_dict.get)
+    next_vertex = random.choices(list(optional_vertices_score_dict.keys()), weights=list(optional_vertices_score_dict.values()), k=1)[0]
+    return next_vertex
