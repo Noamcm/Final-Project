@@ -10,19 +10,13 @@ from eckity.genetic_operators.selections.tournament_selection import TournamentS
 from eckity.statistics.best_average_worst_statistics import BestAverageWorstStatistics
 from eckity.subpopulation import Subpopulation
 from eckity.termination_checkers.threshold_from_target_termination_checker import ThresholdFromTargetTerminationChecker
-from examples.treegp.non_sklearn_mode.symbolic_regression.sym_reg_evaluator import SymbolicRegressionEvaluator
+from SymbolicRegressionEvaluator import SymbolicRegressionEvaluator2
+import pandas as pd
 
-def _target_func(x, y, z):
-    return x + 2 * y + 3 * z
-
-def _evaluate_individual(self, individual):
-    x, y, z = self.df['x'], self.df['y'], self.df['z']
-    return np.mean(np.abs(individual.execute(x=x, y=y, z=z) - self.df['target']))
-
+unpickled_df = pd.read_pickle("./Test.pkl") 
 # each node of the GP tree is either a terminal or a function
 # function nodes, each has two children (which are its operands)
 function_set = [f_add, f_mul, f_sub, f_div, f_sqrt, f_log, f_abs, f_max, f_min, f_inv, f_neg]
-
 # terminal set, consisted of variables and constants
 terminal_set = ['x', 'y', 'z', 0, 1, -1]
 
@@ -33,7 +27,7 @@ algo = SimpleEvolution(
                                                         bloat_weight=0.0001),
                       population_size=200,
                       # user-defined fitness evaluation method
-                      evaluator=SymbolicRegressionEvaluator(),
+                      evaluator=SymbolicRegressionEvaluator2(),
                       # minimization problem (fitness is MAE), so higher fitness is worse
                       higher_is_better=False,
                       elitism_rate=0.05,
