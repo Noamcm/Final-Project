@@ -13,7 +13,6 @@ from eckity.termination_checkers.threshold_from_target_termination_checker impor
 from SymbolicRegressionEvaluator import SymbolicRegressionEvaluator2
 import pandas as pd
 
-unpickled_df = pd.read_pickle("./Test.pkl") 
 # each node of the GP tree is either a terminal or a function
 # function nodes, each has two children (which are its operands)
 function_set = [f_add, f_mul, f_sub, f_div, f_sqrt, f_log, f_abs, f_max, f_min, f_inv, f_neg]
