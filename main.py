@@ -48,6 +48,8 @@ class Data:
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.5
 
         # Hard
+        elif self.difficulty == "Hard0.95_":
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.95
         elif self.difficulty == "Hard0.9_":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.9
         elif self.difficulty == "Hard0.7_":
@@ -204,18 +206,8 @@ class Data:
         for a in algo_types:
             sol_length[a] = []
             run_time[a] = []
-        # sol_length = {"Greedy": [], "AntColony": []}
-        # run_time = {"Greedy": [], "AntColony": []}
-        # run_time = {"Greedy": [], "AntColony": [], "Naive": []}
-        # sol_length = {"Greedy": [], "AntColony": [], "Naive": []}
-        # algoType = "AntColony"
-        # algoType = "Greedy"
-        # algoType = "GA"
-        # algoType = "Naive"
-        # algoTypes = ["Greedy", "AntColony", "Naive"]
-        # algoTypes = ["Greedy", "AntColony"]
         for i in range(num_of_files):
-            # self.create_data(i)
+            self.create_data(i)
             self.read_data(i)
 
             if self.matrix.any():
@@ -232,7 +224,9 @@ class Data:
                             sol = SimpleGreedy.solve(self.G, self.type_empID_dict)
 
                         case "GA":
-                            sol = GA.solve(self.G, self.type_empID_dict)
+                            ga = GA.GA(self.G, self.type_empID_dict)
+                            sol = ga.solve()
+                            sol = [i for i in sol if i != -1]
 
                         case "AntColony":
                             sol = AntColony.solve(self.G, self.type_empID_dict)
@@ -250,7 +244,7 @@ class Data:
                     run_time[algoType].append(et - st)
                     sol_length[algoType].append(len(sol))
                     self.solution = list(sol)
-                self.draw_graph()
+                # self.draw_graph()
 
         with open("results.txt", 'a') as f:
             f.write(str(level_name) + '\n\n')
@@ -279,11 +273,14 @@ if __name__ == "__main__":
               "Medium0.9_", "Medium0.7_", "Medium0.5_",
               "Hard0.9_", "Hard0.7_", "Hard0.5_"]
     # algorithms = ["Greedy", "AntColony", "Naive"]
-    levels = ["Easy0.9_"]
+    # levels = ["Hard0.5_"]
+    levels = ["Hard0.9_", "Hard0.7_", "Hard0.5_"]
     # algorithms = ["Greedy", "AntColony"]
     # algorithms = ["Naive"]
-    algorithms = ["GA"]
-    num_of_files = 1
+    # algorithms = ["AntColony"]
+    # algorithms = ["GA"]
+    algorithms = ["Greedy"]
+    num_of_files = 2
     for level in levels:
         data = Data(level)  # Test/Easy/Medium/Hard
         data.main(level, algorithms, num_of_files)

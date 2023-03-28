@@ -70,7 +70,7 @@ def solve(g, types_emp_id_dict):
     :return: best_clique: list of the vertex of the best max clique we found by "Greedy Algorithm"
     """
     MAX_CLIQUE_SIZE = len(types_emp_id_dict.keys())
-    NUM_OF_ITER = 200000
+    NUM_OF_ITER = 200
     best_clique = []
 
     timeout = time.time() + 3  # 3 sec
@@ -88,11 +88,13 @@ def solve(g, types_emp_id_dict):
         # choose random root
         for empType in shuffledKeysList:
             empFromSameTypeList = dict_copy[empType]
-            v = random.choice(empFromSameTypeList)
-
-            if isValid(g, cur_clique, v):
-                cur_clique.append(v)
-
+            random.shuffle(empFromSameTypeList)
+            # v = random.choice(empFromSameTypeList)
+            for v in empFromSameTypeList:
+                success = isValid(g, cur_clique, v)
+                if success:
+                    cur_clique.append(v)
+                    break
 
         # See if the current team is the best we've found so far
         if isBetter(cur_clique, best_clique):
