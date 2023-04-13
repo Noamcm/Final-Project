@@ -9,6 +9,7 @@ import seaborn as sns
 
 import AntColony
 import GA
+import GA_WorstOut
 import SimpleGreedy
 import Naive
 import time
@@ -233,6 +234,10 @@ class Data:
 
                         case "Naive":
                             sol = Naive.solve(self.G, self.type_empID_dict)
+                        case "GA_WorstOut":
+                            ga = GA_WorstOut.GA_WorstOut(self.G, self.type_empID_dict)
+                            sol = ga.solve()
+                            sol = [i for i in sol if i != -1]
                         case _:
                             sol = None
 
@@ -279,7 +284,8 @@ if __name__ == "__main__":
     # algorithms = ["Naive"]
     # algorithms = ["AntColony"]
     # algorithms = ["GA"]
-    algorithms = ["Greedy"]
+    algorithms = ["GA_WorstOut"]
+    # algorithms = ["Greedy"]
     num_of_files = 2
     for level in levels:
         data = Data(level)  # Test/Easy/Medium/Hard
