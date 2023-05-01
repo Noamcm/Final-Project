@@ -237,6 +237,7 @@ class Data:
                         case "GA_WorstOut":
                             ga = GA_WorstOut.GA_WorstOut(self.G, self.type_empID_dict)
                             sol = ga.solve()
+                            sol = [i for i in sol if i != -1]
                         case _:
                             sol = None
 
@@ -275,7 +276,7 @@ def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_per
 if __name__ == "__main__":
     # levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_", "Medium0.9_", "Medium0.7_", "Medium0.5_", "Hard0.9_", "Hard0.7_",
     # "Hard0.5_"] algorithms = ["Greedy", "AntColony", "Naive"]
-    levels = ["Hard0.9_"]
+    levels = ["Medium0.5_"]
     # levels = ["Hard0.9_", "Hard0.7_", "Hard0.5_"]
     # algorithms = ["Greedy", "AntColony"]
     # algorithms = ["Naive"]
@@ -287,5 +288,4 @@ if __name__ == "__main__":
     for level in levels:
         data = Data(level)  # Test/Easy/Medium/Hard
         data.main(level, algorithms, num_of_files)
-
 

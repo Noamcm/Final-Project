@@ -1,6 +1,8 @@
+import math
 import random
 import time
 from math import comb
+
 import numpy as np
 
 
@@ -9,45 +11,45 @@ class GA_WorstOut:
         self.graph = graph
         self.types_emp_id_dict = types_emp_id_dict
         self.total_from_each_type = len(types_emp_id_dict[0])
-        self.generations = 10000
-        self.POPULATION_SIZE = 100
+        self.generations = 100
+        self.POPULATION_SIZE = 300
         self.BEST_N_AMOUNT = 10
         self.population = []
         self.grades = []
         self.best_n_index = []
-        self.best_sol= []
+        self.best_sol = []
 
     def solve(self):
-        # timeout = time.time() + 1  # 1 sec
+        timeout = time.time() + 2  # 2 sec
 
         # Creating an initial population
         self.create_population()
-        # print(self.population)
 
-        for i in range(self.generations):
+        #for i in range(self.generations):
+        while time.time()<timeout:
             # if time.time() > timeout:
-            #    return self.best_clique
+            # return self.best_sol
 
             # 1. Evaluation
             self.evaluate()
             if self.best_sol:
-                print("FOUND" , self.best_sol)
+                print("FOUND", self.best_sol)
                 return self.best_sol
-            # best_n_index = sorted(best_n_index)
 
             # 2. Crossover
-            # print("Crossover")
             crossover_list = []
             for ind in self.best_n_index:
                 crossover_list.append(self.population[ind])
-            childrens = self.crossover(crossover_list)
+            children = self.crossover(crossover_list)
 
             # 3. Mutation
-            # print("Mutation")
-            mutation_children = self.mutation(childrens)  # maybe nothing happens
+            mutation_children = self.mutation(children)  # maybe nothing happens
             self.population = mutation_children
 
-        return []
+        self.evaluate()
+        self.worst_out()
+
+        return self.best_sol
 
     def create_population(self):
         initial_population = []
@@ -63,8 +65,8 @@ class GA_WorstOut:
 
     def evaluate(self):
         self.grades = self.evaluate_population()
-        if max(self.grades)==1.0:
-            self.best_sol =  self.population[self.grades.index(1)]
+        if max(self.grades) == 1.0:
+            self.best_sol = self.population[self.grades.index(1)]
         self.best_n_index = sorted(range(len(self.grades)), key=lambda i: self.grades[i])[-self.BEST_N_AMOUNT:]
 
     def evaluate_population(self):
@@ -74,33 +76,34 @@ class GA_WorstOut:
             grades.append(grade)
         return grades
 
-    def is_valid(self, clique, v):
-        """
-        :param clique: current clique
-        :param v: vertex that we want to add to the clique
-        :return:  bool -  if the addition of vertex v is legal (if v connected to all the vertex in current clique)
-        """
-        for other_vertex in clique:
-            friends = self.graph[other_vertex].keys()
-            if v not in friends:
-                return False
-        return True
-
-    def popularity(self, emp_id, clique):
+    def evaluate_chromosome(self, group):
+        chromosome = [i for i in group if i != -1]
         num_of_friends_in_team = 0
-        for edge in clique:
-            if emp_id == edge:
-                continue
-            has_edge = self.graph.has_edge(emp_id, edge)
-            if has_edge:
-                num_of_friends_in_team += 1
-        return num_of_friends_in_team
+        for i in range(0, len(chromosome)):
+            for j in range(i + 1, len(chromosome)):
+                vi_id = chromosome[i]
+                vj_id = chromosome[j]
+                has_edge = self.graph.has_edge(vi_id, vj_id)
+                if has_edge:
+                    num_of_friends_in_team += 1
+        maximum_edges = comb(len(chromosome), 2)
+        grade = num_of_friends_in_team / maximum_edges if maximum_edges > 0 else 0
+        return grade
+
 
     def crossover(self, best_chromosomes):
-        after_crossover = best_chromosomes.copy()
+        after_crossover = []
         for i in range(len(best_chromosomes)):
             for j in range(i + 1, len(best_chromosomes)):
-                after_crossover.append(self.simple_crossover(best_chromosomes[i], best_chromosomes[j]))
+                if set(best_chromosomes[i])==set(best_chromosomes[j]):
+                    continue
+                child = self.simple_crossover(best_chromosomes[i], best_chromosomes[j])
+                if child not in after_crossover:
+                    after_crossover.append(child)
+        for chr in best_chromosomes:
+            if chr not in after_crossover:
+                after_crossover.append(chr)
+        #print(len(after_crossover))
         return after_crossover
 
     def simple_crossover(self, parent1, parent2):
@@ -112,35 +115,6 @@ class GA_WorstOut:
                 child.append(parent2[i])
         return child
 
-    def create_chromosome(self):
-        chromosome = []
-        for empType in self.types_emp_id_dict.keys():
-            # choose random root
-            emp_from_same_type_list = self.types_emp_id_dict[empType]
-            random.shuffle(emp_from_same_type_list)
-            success = False
-            for v in emp_from_same_type_list:
-                if self.is_valid(chromosome, v):
-                    chromosome.append(v)
-                    success = True
-                    break
-            if not success:
-                chromosome.append(-1)
-        return list(chromosome)
-
-    def evaluate_chromosome(self, chromosome):
-        num_of_friends_in_team = 0
-        for i in range(0, len(chromosome)):
-            for j in range(i + 1, len(chromosome)):
-                vi_id = chromosome[i]
-                vj_id = chromosome[j]
-                has_edge = self.graph.has_edge(vi_id, vj_id)
-                if has_edge:
-                    num_of_friends_in_team += 1
-        maximum_edges = comb(len(chromosome), 2)
-        grade = num_of_friends_in_team / maximum_edges
-        return grade
-
     def mutation(self, children):
         mutation_percentage = 5
         for child in children:
@@ -151,6 +125,71 @@ class GA_WorstOut:
                 child[int(rand_type)] = np.int32(rand_emp)
         return children
 
+    def worst_out(self):
+        for group in self.population:
+            print("before removal: " , group)
+            group = self.remove_bad_emp(group)
+            print("after removal: " , group)
+            group = self.add_good_emp(group)
+            print("after add: " , group)
+
+
+    def employees_popularity(self, emp_list):
+        group_grade = []
+        for i in range(len(emp_list)):
+            num_of_friends = 0
+            for j in range(len(emp_list)):
+                if self.graph.has_edge(emp_list[i], emp_list[j]) and i != j:
+                    num_of_friends += 1
+            if num_of_friends==0:
+                group_grade.append(math.inf)
+            else:
+                group_grade.append(num_of_friends)
+        return group_grade
+
+    def remove_bad_emp(self, group):
+        while self.evaluate_chromosome(group) < 1:  # pop weak emp until legal
+            group_grade = self.employees_popularity(group)
+            removed_emp_idx = group_grade.index(min(group_grade))
+            group[removed_emp_idx] = -1
+            if max(group) == -1 or min(group_grade) == math.inf:
+                break
+        if self.evaluate_chromosome(group) == 1.0:  # update new sol
+            if self.calculate_length(self.best_sol) < self.calculate_length(group):
+                self.best_sol = group
+        return group
+
+    def add_good_emp(self, group):
+        for i in range(len(group)):
+            if group[i]==-1:
+                empFromSameTypeList = self.types_emp_id_dict[i].copy()  # {1: [1, 2 ,3], 2: [4, 5, 6]..}
+                random.shuffle(empFromSameTypeList)
+                # v = random.choice(empFromSameTypeList)
+                for v in empFromSameTypeList:
+                    success = self.is_valid(group, v)
+                    if success:
+                        group[i]=v
+                        break
+        if self.calculate_length(self.best_sol) < self.calculate_length(group):
+            #print(group)
+            self.best_sol = group
+        return group
+
+    def is_valid(self, clique, v):
+        """
+        :param clique: current clique
+        :param v: vertex that we want to add to the clique
+        :return:  bool -  if the addition of vertex v is legal (if v connected to all the vertex in current clique)
+        """
+        for other_vertex in clique:
+            if other_vertex!=-1:
+                friends = self.graph[other_vertex].keys()
+                if v not in friends:
+                    return False
+        return True
+
+    def calculate_length(self, group):
+        return len([i for i in group if i != -1])
 
 # one-point crossover
 def one_point_crossover(parent1, parent2):
