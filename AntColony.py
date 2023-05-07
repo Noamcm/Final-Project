@@ -22,8 +22,8 @@ import itertools
 import random
 import time
 
-N_ANTS = 3
-N_ITERATIONS = 4
+N_ANTS = 600
+N_ITERATIONS = 5
 PHEROMONE_DEPOSIT = 5
 EVAPORATION_RATE = 0.9
 
@@ -37,6 +37,8 @@ def update_pheromone_matrix(pheromone_trail, best_clique):
             pheromone_trail[(i, j)] = (1 - EVAPORATION_RATE) * pheromone_trail[(i, j)] + PHEROMONE_DEPOSIT
         else:
             pheromone_trail[(j, i)] = (1 - EVAPORATION_RATE) * pheromone_trail[(j, i)] + PHEROMONE_DEPOSIT
+
+
 def ant_colony_optimization(graph, d):
     timeout = time.time() + 2  # 2 sec
 
@@ -46,30 +48,32 @@ def ant_colony_optimization(graph, d):
 
     best_clique = set()
     best_clique_size = 0
-
     # Repeat the algorithm for n_iterations
-    for iteration in range(N_ITERATIONS):
+    # for iteration in range(N_ITERATIONS):
+    while time.time() < timeout:
         # Generate n_ants candidate solutions (cliques)
+        # if time.time() > timeout:
+        #     return best_clique
         cliques = [_generate_clique(graph, d, pheromone_trail) for _ in range(N_ANTS)]
 
         index = 1
         # Evaluate the quality of each clique and store the best
         for clique in cliques:
-            if time.time() > timeout:
-                return best_clique
             # print("clique " + str(index) + ": " + str(clique))
-            index+=1
+            index += 1
             if len(clique) > best_clique_size:
                 best_clique = clique
+                print(best_clique)
                 best_clique_size = len(clique)
                 if best_clique_size == MAX_CLIQUE_SIZE:
                     return best_clique
 
         # Update the pheromone trail for the edges in the best clique
         update_pheromone_matrix(pheromone_trail, best_clique)
-        print("len best_clique: " + str(len(best_clique)))
-    print("best_clique: " + str(best_clique))
+        # print("len best_clique: " + str(len(best_clique)))
+    # print("best_clique: " + str(best_clique))
     return best_clique
+
 
 def _generate_clique(graph, d, pheromone_trail):
     clique = set()
@@ -80,7 +84,6 @@ def _generate_clique(graph, d, pheromone_trail):
     for empType in shuffledKeysList:
         empFromSameTypeList = d[empType]
         v = _select_next_vertex(graph, empFromSameTypeList, clique, d, pheromone_trail)
-
         if isValid(graph, clique, v):
             clique.add(v)
 
@@ -95,7 +98,6 @@ def _generate_clique(graph, d, pheromone_trail):
     #
     #     clique.add(next_vertex)
     #     current_vertex = next_vertex
-
     return clique
 
 
@@ -165,6 +167,8 @@ def remove_irrelevant_vertices(g, same_type_vertices, d, clique):
             continue
         updated_neighbors.append(n)
     return updated_neighbors
+
+
 def _select_next_vertex(g, same_type_vertices, clique, d, pheromone_trail):
     """
     Select the next vertex to add to the clique using a combination of pheromone trail information
@@ -175,9 +179,9 @@ def _select_next_vertex(g, same_type_vertices, clique, d, pheromone_trail):
         return None
 
     optional_vertices_score_dict = {i: neighbor_score(i, pheromone_trail, clique) for i in optional_vertices}
-    optional_vertices_score_dict_items = list(optional_vertices_score_dict.items())
-    random.shuffle(optional_vertices_score_dict_items)
-    optional_vertices_score_dict = dict(optional_vertices_score_dict_items)
+    # optional_vertices_score_dict_items = list(optional_vertices_score_dict.items())
+    # random.shuffle(optional_vertices_score_dict_items)
+    # optional_vertices_score_dict = dict(optional_vertices_score_dict_items)
     # print(neighbors_score_dict)
     # next_vertex = max(optional_vertices_score_dict, key=optional_vertices_score_dict.get)
     next_vertex = random.choices(list(optional_vertices_score_dict.keys()), weights=list(optional_vertices_score_dict.values()), k=1)[0]
