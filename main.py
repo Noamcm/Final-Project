@@ -287,7 +287,7 @@ def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_per
 if __name__ == "__main__":
     # levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_", "Medium0.9_", "Medium0.7_", "Medium0.5_", "Hard0.9_", "Hard0.7_",
     # "Hard0.5_"] algorithms = ["Greedy", "AntColony", "Naive"]
-    levels = ["Medium0.5_"]
+    levels = ["Hard0.7_"]
     # levels = ["Hard0.9_", "Hard0.7_", "Hard0.5_"]
     # algorithms = ["Greedy", "AntColony"]
     # algorithms = ["Naive"]

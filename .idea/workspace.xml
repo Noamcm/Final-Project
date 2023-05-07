@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="work">
-      <change afterPath="$PROJECT_DIR$/GA_deap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_Illegal_population_pyGAD.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA_Worstout_ECkity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GA_deap.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA_deap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,6 +151,7 @@
       <workItem from="1673419743992" duration="8063000" />
       <workItem from="1682839076160" duration="23821000" />
       <workItem from="1683187738799" duration="8355000" />
+      <workItem from="1683442102862" duration="11180000" />
     </task>
     <task id="LOCAL‎-00001" summary="fix writing function">
       <created>1672248866501</created>
@@ -284,11 +284,6 @@
           <line>29</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/GA_deap.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -314,7 +309,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Final_Project$deap.coverage" NAME="GA_deap Coverage Results" MODIFIED="1683199309819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Illegal_population_pyGAD.coverage" NAME="GA_Illegal_population_pyGAD Coverage Results" MODIFIED="1682921330700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Final_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1683203838015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Final_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1683463129505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Worstout_ECkity.coverage" NAME="GA_Worstout_ECkity Coverage Results" MODIFIED="1683190490436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Worstout_ECkity__1_.coverage" NAME="GA_Worstout_ECkity (1) Coverage Results" MODIFIED="1683189364695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
