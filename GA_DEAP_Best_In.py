@@ -5,7 +5,6 @@ from math import comb
 import networkx as nx
 import numpy as np
 from deap import base, creator, tools
-from deap import *
 from collections import UserList
 
 class GA_DEAP_Best_In:
@@ -26,28 +25,15 @@ class GA_DEAP_Best_In:
         self.total_vertexes = self.total_types * self.total_from_each_type
 
         self.toolbox = base.Toolbox()
-        # # Create the DEAP self.toolbox and define the problem variables
-        # creator.create("FitnessMax", base.Fitness, weights=(1.0,))
-        # creator.create("Individual",list , fitness=creator.FitnessMax)
-        # #self.toolbox.register("attr_int", random.randint, 0, 100)
-        # self.toolbox.register("individual", tools.initIterate, creator.Individual, self.init_individual)
-        # self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual)
-        #
-        # # Define the genetic operators
-        # self.toolbox.register("mate", tools.cxUniform)
-        # self.toolbox.register("mutate", self.mutation)
-        # self.toolbox.register("select", tools.selTournament, tournsize=3)
-        #
-        # # Define the evaluation function and the main GA loop
-        # self.toolbox.register("evaluate", self.evaluate_chromosome)
-
         # Create the DEAP self.toolbox and define the problem variables
         creator.create("FitnessMax", base.Fitness, weights=(1.0,))
         creator.create("Individual", list, fitness=creator.FitnessMax)
-        self.toolbox.register("attr_bool", random.randint, 0, 1)
-        self.toolbox.register("individual", self.create_chromosome)
-        self.toolbox.register("population", self.create_population)
-        self.toolbox.register("evaluate", self.evaluate_chromosome)
+        # self.toolbox.register("attr_bool", random.randint, 0, 1)
+        self.toolbox.register("individual", tools.initIterate, creator.Individual, self.create_chromosome)
+        self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual)
+
+        self.toolbox.register("evaluate_individual", self.evaluate_chromosome)
+        self.toolbox.register("evaluate_population", self.evaluate_population)
         self.toolbox.register("mate", self.crossover)
         self.toolbox.register("mutate", self.mutation)
         self.toolbox.register("select", tools.selTournament, tournsize=3)
@@ -156,6 +142,60 @@ class GA_DEAP_Best_In:
     #
     # def calculate_length(self, group):
     #     return len([i for i in group if i != -1])
+
+    def solve(self):
+        '''
+        CXPB:  probability for crossover. 0.5 means 50% chance of crossover.
+        MUTPB: probability for mutation. 0.2 means 20% chance of mutation.
+        NGEN: number of generations GA will run.
+        '''
+        self.population = self.toolbox.population(n=self.POPULATION_SIZE)
+        grades = self.toolbox.evaluate_population()
+
+        hof = tools.HallOfFame(1)
+        CXPB, MUTPB, NGEN = 0.5, 0.2, 100
+        print(self.population)
+        for g in range(NGEN):
+            offspring = self.toolbox.select(self.population, len(self.population))
+            offspring = list(map(self.toolbox.clone, offspring))
+
+            for child1, child2 in zip(offspring[::2], offspring[1::2]):
+                self.toolbox.mate(child1, child2, CXPB)
+                del child1.fitness.values
+                del child2.fitness.values
+
+            for mutant in offspring:
+                if random.random() < MUTPB:
+                    self.toolbox.mutate(mutant)
+                    del mutant.fitness.values
+
+            invalid_ind = [ind for ind in offspring if not ind.fitness.valid]
+            fitnesses = self.toolbox.map(self.toolbox.evaluate, invalid_ind)
+            for ind, fit in zip(invalid_ind, fitnesses):
+                ind.fitness.values = fit
+
+
+            self.population[:] = offspring
+        self.worst_out()
+        #print(self.population)
+        #print(max([self.calculate_length(lst) for lst in self.population]))
+        #print(self.evaluate_Generation(self.population))
+        best =[]
+        best_score=0
+        best_size=0
+        for lst in self.population:
+            if self.calculate_length(lst)>best_size and self.evaluate_chromosome(lst)[0]>best_score:
+                best=lst
+        return best
+            #print(self.evaluate_Generation(pop))
+
+            # fits = [ind.fitness.values[0] for ind in pop]
+            # length = len(pop)
+            # mean = sum(fits) / length
+            # sum2 = sum(x * x for x in fits)
+            # std = abs(sum2 / length - mean ** 2) ** 0.5
+            #print("Generation {:>3} -- Min: {:>5}, Max: {:>5}, Avg: {:>5.2f}, Std: {:>5.2f}".format(g, min(fits), max(fits), mean, std))
+
     def create_chromosome(self):
         chromosome = []
         for empType in self.types_emp_id_dict.keys():
@@ -326,56 +366,7 @@ class GA_DEAP_Best_In:
     #     return child1, child2
     #
 
-    def solve(self):
-        '''
-        CXPB:  probability for crossover. 0.5 means 50% chance of crossover.
-        MUTPB: probability for mutation. 0.2 means 20% chance of mutation.
-        NGEN: number of generations GA will run.
-        '''
-        self.population = self.toolbox.population(n=10)
-        hof = tools.HallOfFame(1)
-        CXPB, MUTPB, NGEN = 0.5, 0.2, 100
-        print(self.population)
-        for g in range(NGEN):
-            offspring = self.toolbox.select(self.population, len(self.population))
-            offspring = list(map(self.toolbox.clone, offspring))
 
-            for child1, child2 in zip(offspring[::2], offspring[1::2]):
-                self.toolbox.mate(child1, child2, CXPB)
-                del child1.fitness.values
-                del child2.fitness.values
-
-            for mutant in offspring:
-                if random.random() < MUTPB:
-                    self.toolbox.mutate(mutant)
-                    del mutant.fitness.values
-
-            invalid_ind = [ind for ind in offspring if not ind.fitness.valid]
-            fitnesses = self.toolbox.map(self.toolbox.evaluate, invalid_ind)
-            for ind, fit in zip(invalid_ind, fitnesses):
-                ind.fitness.values = fit
-
-
-            self.population[:] = offspring
-        self.worst_out()
-        #print(self.population)
-        #print(max([self.calculate_length(lst) for lst in self.population]))
-        #print(self.evaluate_Generation(self.population))
-        best =[]
-        best_score=0
-        best_size=0
-        for lst in self.population:
-            if self.calculate_length(lst)>best_size and self.evaluate_chromosome(lst)[0]>best_score:
-                best=lst
-        return best
-            #print(self.evaluate_Generation(pop))
-
-            # fits = [ind.fitness.values[0] for ind in pop]
-            # length = len(pop)
-            # mean = sum(fits) / length
-            # sum2 = sum(x * x for x in fits)
-            # std = abs(sum2 / length - mean ** 2) ** 0.5
-            #print("Generation {:>3} -- Min: {:>5}, Max: {:>5}, Avg: {:>5.2f}, Std: {:>5.2f}".format(g, min(fits), max(fits), mean, std))
 
 def fitness(chromosome):
     grade = 0

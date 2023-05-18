@@ -12,8 +12,8 @@ class GA:
         self.matrix = nx.to_numpy_array(graph)
         self.types_emp_id_dict = types_emp_id_dict
         self.generations = 20
-        self.POPULATION_SIZE = 100
-        self.BEST_N_AMOUNT = 8
+        self.POPULATION_SIZE = 600
+        # self.BEST_N_AMOUNT = 8
         self.best_clique = []
         self.best_clique_size = 0
         self.best_clique_weight = 0
@@ -74,8 +74,8 @@ class GA:
             best_clique_candidate = (best_n_index[0], grades[0])
             # best_clique_candidate = (self.population[best_n_index[0]], grades[best_n_index[0]])
             if self.is_better(best_clique_candidate):
-                print("update")
-                print("i = " + str(i))
+                print("update" + str(i))
+                # print("i = " + str(i))
                 self.best_clique = best_clique_candidate[0]
                 self.best_clique_weight = best_clique_candidate[1]
                 print(self.best_clique_weight)
