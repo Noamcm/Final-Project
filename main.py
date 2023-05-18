@@ -9,10 +9,12 @@ import seaborn as sns
 
 import AntColony
 import GA
-import GA_GAD
+import GA_DEAP_Best_In
+import GA_deap
 import SimpleGreedy
 import Naive
 import time
+
 
 class Data:
 
@@ -60,13 +62,13 @@ class Data:
 
         # Large
         elif self.difficulty == "Large0.95_":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 100, 0.95
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 60, 30, 0.95
         elif self.difficulty == "Large0.9_":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 100, 0.9
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 60, 30, 0.9
         elif self.difficulty == "Large0.7_":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 100, 0.7
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 60, 30, 0.7
         elif self.difficulty == "Large0.5_":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 100, 0.5
+            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 60, 30, 0.5
 
 
         elif self.difficulty == "AI_Medium":
@@ -240,10 +242,21 @@ class Data:
                             sol = ga.solve()
                             sol = [i for i in sol if i != -1]
 
-                        case "GA_GAD":
-                            ga_gad = GA_GAD.GA_GAD(self.G, self.type_empID_dict)
-                            sol = ga_gad.solve()
-                            sol = [i for i in sol if i != -1]
+                        # case "GA_GAD":
+                        #     ga_gad = GA_GAD.GA_GAD(self.G, self.type_empID_dict)
+                        #     sol = ga_gad.solve()
+                        #     sol = [i for i in sol if i != -1]
+                        case "GA_deap":
+                            ga = GA_deap.GA_deap(self.G, self.type_empID_dict)
+                            sol = ga.solve()
+                            if sol:
+                                sol = [i for i in sol if i != -1]
+
+                        case "GA_DEAP_Best_In":
+                            ga = GA_DEAP_Best_In.GA_DEAP_Best_In(self.G, self.type_empID_dict)
+                            sol = ga.solve()
+                            if sol:
+                                sol = [i for i in sol if i != -1]
 
                         case "AntColony":
                             sol = AntColony.solve(self.G, self.type_empID_dict)
@@ -292,16 +305,18 @@ if __name__ == "__main__":
     # algorithms = ["Greedy", "AntColony", "Naive"]
     # levels = ["Large0.9_", "Large0.7_", "Large0.5_"]
     # levels = ["Medium0.9_", "Medium0.7_", "Medium0.5_"]
-    # levels = ["Hard0.9_", "Hard0.7_", "Hard0.5_"]
+    # levels = ["Hard0.7_", "Hard0.5_", "Medium0.5_", "Medium0.7_"]
     # levels = ["Hard0.5_"]
     # levels = ["Medium0.7_"]
-    # algorithms = ["Greedy", "AntColony", "GA"]
-    # algorithms = ["Greedy", "GA"]
+    algorithms = ["Greedy", "AntColony", "GA"]
+    algorithms = ["Greedy", "GA"]
+    # algorithms = ["GA"]
     # algorithms = ["Naive"]
     # algorithms = ["Greedy"]
     # algorithms = ["AntColony"]
-    algorithms = ["GA"]
-    num_of_files = 10
+    # algorithms = ["GA_deap"]
+    # algorithms = ["GA_DEAP_Best_In"]
+    num_of_files = 20
     for level in levels:
         data = Data(level)  # Test/Easy/Medium/Hard
         data.main(level, algorithms, num_of_files)
