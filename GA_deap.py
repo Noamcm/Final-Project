@@ -1,12 +1,11 @@
 import copy
-import itertools
 import math
 import random
 import time
+import csv
 from math import comb
 from deap import base, creator, tools
 
-import csv
 
 
 class GA_deap:
@@ -26,7 +25,6 @@ class GA_deap:
         self.crossover_statistics = []
         self.worst_out_statistics = []
         self.duplicates = 0
-
 
         self.toolbox = base.Toolbox()
         # Create the DEAP self.toolbox and define the problem variables

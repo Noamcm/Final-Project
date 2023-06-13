@@ -1,0 +1,427 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"818eddcb-9e9e-4ba7-9d34-5a27dac6d368\" name=\"Changes\" comment=\"test files\">\r\n      <change afterPath=\"$PROJECT_DIR$/Naive.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AntColony.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AntColony.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GA.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GA.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/SimpleGreedy.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/SimpleGreedy.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/drawnData/Test.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/drawnData/Test.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/graphData/Test.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/graphData/Test.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/metaData/Test.txt\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/writtenData/Test.txt\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Rebase.Settings\">\r\n    <option name=\"NEW_BASE\" value=\"origin/Noam\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2JY9RHCXgllSitrAa6m7FoI1Hev\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\NOAMCO1\\Documents\\GitHub\\Final-Project\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.main\">\r\n    <configuration name=\"TestFiles\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Final-Project\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"C:\\Users\\NOAMCO1\\Documents\\GitHub\\Final-Project\\TestFiles.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Final-Project\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"C:\\Users\\orinahm\\PycharmProjects\\Ori\\venv\\Scripts\\python.exe\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"test\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Final-Project\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/test.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Python.main\" />\r\n      <item itemvalue=\"Python.test\" />\r\n      <item itemvalue=\"Python.TestFiles\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.main\" />\r\n        <item itemvalue=\"Python.TestFiles\" />\r\n        <item itemvalue=\"Python.test\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"818eddcb-9e9e-4ba7-9d34-5a27dac6d368\" name=\"Changes\" comment=\"\" />\r\n      <created>1672244141232</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1672244141232</updated>\r\n      <workItem from=\"1672244142604\" duration=\"4869000\" />\r\n      <workItem from=\"1672299052403\" duration=\"9347000\" />\r\n      <workItem from=\"1673353272434\" duration=\"12096000\" />\r\n      <workItem from=\"1673374260374\" duration=\"786000\" />\r\n      <workItem from=\"1673419743992\" duration=\"8063000\" />\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00001\" summary=\"fix writing function\">\r\n      <created>1672248866501</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1672248866501</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00002\" summary=\"test\">\r\n      <created>1672755888572</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1672755888572</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00003\" summary=\"with visualization and graphs\">\r\n      <created>1673373045917</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1673373045917</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00004\" summary=\"with visualization and graphs\">\r\n      <created>1673373161543</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1673373161543</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"with visualization and graphs\">\r\n      <created>1673528371721</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1673528371721</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00006\" summary=\"add greedy, ga, aco files\">\r\n      <created>1675153918459</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1675153918459</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E-00007\" summary=\"test files\">\r\n      <created>1675154148885</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\u200E\" />\r\n      <updated>1675154148885</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\"requirements.txt\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"fix writing function\" />\r\n    <MESSAGE value=\"test\" />\r\n    <MESSAGE value=\"with visualization and graphs\" />\r\n    <MESSAGE value=\"add greedy, ga, aco files\" />\r\n    <MESSAGE value=\"test files\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"test files\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\r\n          <url>file://$PROJECT_DIR$/Naive.py</url>\r\n          <line>37</line>\r\n          <option name=\"timeStamp\" value=\"42\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\r\n          <url>file://$PROJECT_DIR$/GA.py</url>\r\n          <line>101</line>\r\n          <option name=\"timeStamp\" value=\"47\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n      <default-breakpoints>\r\n        <breakpoint type=\"python-exception\">\r\n          <properties notifyOnTerminate=\"true\" exception=\"BaseException\">\r\n            <option name=\"notifyOnTerminate\" value=\"true\" />\r\n          </properties>\r\n        </breakpoint>\r\n      </default-breakpoints>\r\n    </breakpoint-manager>\r\n    <watches-manager>\r\n      <configuration name=\"PythonConfigurationType\">\r\n        <watch expression=\"matrix.shape\" />\r\n        <watch expression=\"a\" />\r\n        <watch expression=\"graph\" />\r\n      </configuration>\r\n      <inline-watch fileUrl=\"file://$PROJECT_DIR$/AntColony.py\" line=\"33\">\r\n        <watch expression=\"pheromone_trail\" language=\"Python\" />\r\n      </inline-watch>\r\n    </watches-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1c101a4fd8a1cbe1a4beeb954304912101532bff)
++++ b/.idea/workspace.xml	(date 1683467930737)
+@@ -1,18 +1,21 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="test files">
+-      <change afterPath="$PROJECT_DIR$/Naive.py" afterDir="false" />
++    <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="fix greedy algorithm&#10;add GA solver">
++      <change afterPath="$PROJECT_DIR$/GA_DEAP_Best_In.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/GA_GAD.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/Final-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Final-Project.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/AntColony.py" beforeDir="false" afterPath="$PROJECT_DIR$/AntColony.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/GA.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/SimpleGreedy.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleGreedy.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/drawnData/Test.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Test.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/graphData/Test.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphData/Test.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/drawnData/Test.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/graphData/Test.png" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/metaData/Test.txt" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/writtenData/Test.txt" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -52,7 +55,7 @@
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
++    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
+   }
+ }</component>
+   <component name="RecentsManager">
+@@ -90,7 +93,8 @@
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+-      <option name="SDK_HOME" value="C:\Users\orinahm\PycharmProjects\Ori\venv\Scripts\python.exe" />
++      <option name="SDK_HOME" value="C:\Users\ORINAHM\AppData\Local\Programs\Python\Python311\python.exe" />
++      <option name="SDK_NAME" value="Python 3.11 (Final-Project2023)" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+       <option name="IS_MODULE_SDK" value="false" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+@@ -229,7 +233,8 @@
+     <MESSAGE value="with visualization and graphs" />
+     <MESSAGE value="add greedy, ga, aco files" />
+     <MESSAGE value="test files" />
+-    <option name="LAST_COMMIT_MESSAGE" value="test files" />
++    <MESSAGE value="fix greedy algorithm&#10;add GA solver" />
++    <option name="LAST_COMMIT_MESSAGE" value="fix greedy algorithm&#10;add GA solver" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -240,9 +245,94 @@
+           <option name="timeStamp" value="42" />
+         </line-breakpoint>
+         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA_GAD.py</url>
++          <line>52</line>
++          <option name="timeStamp" value="43" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA_GAD.py</url>
++          <line>51</line>
++          <option name="timeStamp" value="44" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA_GAD.py</url>
++          <line>50</line>
++          <option name="timeStamp" value="46" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA_GAD.py</url>
++          <line>188</line>
++          <option name="timeStamp" value="47" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA_GAD.py</url>
++          <line>37</line>
++          <option name="timeStamp" value="48" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python311/Lib/site-packages/pygad/pygad.py</url>
++          <line>1731</line>
++          <option name="timeStamp" value="49" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python311/Lib/site-packages/pygad/pygad.py</url>
++          <line>1713</line>
++          <option name="timeStamp" value="50" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python311/Lib/site-packages/pygad/pygad.py</url>
++          <line>1508</line>
++          <option name="timeStamp" value="51" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python311/Lib/site-packages/pygad/pygad.py</url>
++          <line>1687</line>
++          <option name="timeStamp" value="53" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+           <url>file://$PROJECT_DIR$/GA.py</url>
+-          <line>101</line>
+-          <option name="timeStamp" value="47" />
++          <line>75</line>
++          <option name="timeStamp" value="93" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA.py</url>
++          <line>73</line>
++          <option name="timeStamp" value="94" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA.py</url>
++          <line>50</line>
++          <option name="timeStamp" value="95" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA.py</url>
++          <line>59</line>
++          <option name="timeStamp" value="97" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA.py</url>
++          <line>112</line>
++          <option name="timeStamp" value="98" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA.py</url>
++          <line>107</line>
++          <option name="timeStamp" value="99" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA.py</url>
++          <line>47</line>
++          <option name="timeStamp" value="103" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA.py</url>
++          <line>42</line>
++          <option name="timeStamp" value="104" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/GA_DEAP_Best_In.py</url>
++          <line>29</line>
++          <option name="timeStamp" value="106" />
+         </line-breakpoint>
+       </breakpoints>
+       <default-breakpoints>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.11 (Ori)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 1c101a4fd8a1cbe1a4beeb954304912101532bff)
++++ b/.idea/misc.xml	(date 1677665532656)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (Ori)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (Final-Project2023)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/Final-Project.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <excludeFolder url=\"file://$MODULE_DIR$/venv\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n  <component name=\"PyDocumentationSettings\">\r\n    <option name=\"format\" value=\"NUMPY\" />\r\n    <option name=\"myDocStringFormat\" value=\"NumPy\" />\r\n  </component>\r\n  <component name=\"TestRunnerService\">\r\n    <option name=\"PROJECT_TEST_RUNNER\" value=\"py.test\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Final-Project.iml b/.idea/Final-Project.iml
+--- a/.idea/Final-Project.iml	(revision 1c101a4fd8a1cbe1a4beeb954304912101532bff)
++++ b/.idea/Final-Project.iml	(date 1677665532634)
+@@ -4,7 +4,7 @@
+     <content url="file://$MODULE_DIR$">
+       <excludeFolder url="file://$MODULE_DIR$/venv" />
+     </content>
+-    <orderEntry type="inheritedJdk" />
++    <orderEntry type="jdk" jdkName="Python 3.11 (Final-Project2023)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+   <component name="PyDocumentationSettings">
+Index: GA_GAD.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/GA_GAD.py b/GA_GAD.py
+new file mode 100644
+--- /dev/null	(date 1682854473071)
++++ b/GA_GAD.py	(date 1682854473071)
+@@ -0,0 +1,217 @@
++import random
++import time
++import pygad
++
++class GA_GAD:
++    def __init__(self, graph, types_emp_id_dict):
++
++        self.graph = graph
++        self.types_emp_id_dict = types_emp_id_dict
++        self.generations = 10
++        self.POPULATION_SIZE = 200
++        self.BEST_N_AMOUNT = 10
++        self.best_clique = []
++        self.best_clique_size = 0
++        self.best_clique_weight = 0
++        self.population = []
++
++        # pyGAD variables
++        self.fitness_function = GA_GAD.evaluate_population
++        self.num_generations = 50
++        self.num_parents_mating = 4
++        self.sol_per_pop = 8
++        # self.num_genes = len(self.types_emp_id_dict.keys)
++        self.num_genes = 10
++        self.init_range_low = -2
++        self.init_range_high = 5
++        self.parent_selection_type = "sss"
++        self.keep_parents = 1
++        self.crossover_type = GA_GAD.fill_empty_crossover
++        self.mutation_type = "random"
++        self. mutation_percent_genes = 10
++
++    def solve(self):
++        timeout = time.time() + 2  # 2 sec
++
++        # Creating an initial population
++        self.create_population()
++        ga_instance = pygad.GA(num_generations=self.num_generations,
++                               num_parents_mating=self.num_parents_mating,
++                               fitness_func=self.fitness_function,
++                               sol_per_pop=self.sol_per_pop,
++                               num_genes=self.num_genes,
++                               initial_population=self.create_population,
++                               init_range_low=self.init_range_low,
++                               init_range_high=self.init_range_high,
++                               parent_selection_type=self.parent_selection_type,
++                               keep_parents=self.keep_parents,
++                               crossover_type=self.crossover_type,
++                               mutation_type=self.mutation_type,
++                               mutation_percent_genes=self.mutation_percent_genes)
++        ga_instance.run()
++        solution, solution_fitness, solution_idx = ga_instance.best_solution()
++        while True:
++            if time.time() > timeout:
++                return self.best_clique
++
++            # 1. Evaluation
++            grades = self.evaluate_population()
++            best_n_index = sorted(range(len(grades)), key=lambda i: grades[i])[-self.BEST_N_AMOUNT:]
++            best_n_index = sorted(best_n_index)
++
++            # check if the best Chromosome from the Population is better than current best clique
++            best_clique_candidate = (self.population[best_n_index[0]], grades[best_n_index[0]])
++            if self.is_better(best_clique_candidate):
++                self.best_clique = best_clique_candidate[0]
++                self.best_clique_weight = best_clique_candidate[1]
++                # self.best_clique_size = len(self.best_clique)
++
++            if self.best_clique_weight == self.types_emp_id_dict.keys():
++                return self.best_clique
++
++            # 2. Crossover
++            # print("Crossover")
++            crossover_list = []
++            for ind in best_n_index:
++                crossover_list.append(self.population[ind])
++            children = self.crossover(crossover_list)
++
++            # 3. Mutation
++            # print("Mutation")
++            mutation_children = self.mutation(children)
++            self.population.append(mutation_children)
++
++
++    def is_better(self, cur_clique):
++        if self.best_clique_size == 0:
++            return cur_clique
++        else:
++            return cur_clique[1] > self.best_clique_weight
++
++    def is_valid(self, clique, v):
++        """
++        :param clique: current clique
++        :param v: vertex that we want to add to the clique
++        :return:  bool -  if the addition of vertex v is legal (if v connected to all the vertex in current clique)
++        """
++        if v == -1:
++            return False
++        for other_vertex in clique:
++            if other_vertex == -1:
++                continue
++            # friends = self.graph[other_vertex]
++            # print(friends)
++            if v not in self.graph[other_vertex].keys():
++                return False
++            # if len(friends) == 0 or v not in list(friends).any(v):
++            # if len(friends) == 0 or v not in friends:
++            #     return False
++        return True
++
++    def fill_empty_crossover(self, parent1, parent2):
++        child1 = parent1
++
++        # remove the worst employee, and try to fill the empty cells
++        p1_empty_index = []
++        p1_degree_list = []
++        for i in range(len(parent1)):
++            if parent1[i] == -1:
++                p1_empty_index.append(i)
++                p1_degree_list.append(-1)
++            else:
++                p1_degree_list.append(self.graph.degree[i])
++        index_of_small = p1_degree_list.index(min(filter(lambda x: x > 0, p1_degree_list)))
++        p1_empty_index.append(index_of_small)
++        child1[index_of_small] = -1
++
++        for i in p1_empty_index:
++            candidate_v = parent2[i]
++            if self.is_valid(child1, candidate_v):
++                child1[i] = candidate_v
++        return child1
++
++    def crossover(self, best_chromosomes):
++        after_crossover = []
++        for i in range(0, len(best_chromosomes) - 1, 2):
++            after_crossover.append(self.fill_empty_crossover(best_chromosomes[i], best_chromosomes[i + 1]))
++        return after_crossover
++
++    def create_chromosome(self):
++        chromosome = []
++        for empType in self.types_emp_id_dict.keys():
++            # choose random root
++            emp_from_same_type_list = self.types_emp_id_dict[empType]
++            random.shuffle(emp_from_same_type_list)
++            success = False
++            for v in emp_from_same_type_list:
++                if self.is_valid(chromosome, v):
++                    chromosome.append(v)
++                    success = True
++                    break
++            if not success:
++                chromosome.append(-1)
++        return list(chromosome)
++
++    def create_population(self):
++        initial_population = []
++        for i in range(self.POPULATION_SIZE):
++            chromosome = self.create_chromosome()
++            initial_population.append(chromosome)
++        self.population = initial_population
++
++    @staticmethod
++    def evaluate_chromosome(chromosome):
++        # num_of_friends_in_team = 0
++        # for i in range(0, len(chromosome)):
++        #     for j in range(i, len(chromosome)):
++        #         vi_id = chromosome[i]
++        #         vj_id = chromosome[j]
++        #         has_edge = self.graph.has_edge(vi_id, vj_id)
++        #         if has_edge:
++        #             num_of_friends_in_team += 1
++        # grade = num_of_friends_in_team
++        grade = 0
++        for i in chromosome:
++            if i != -1:
++                grade += 1
++        return grade
++
++    def evaluate_population1(self):
++        grades = []
++        i = 0
++        for chromosome in self.population:
++            grade = self.evaluate_chromosome(ga_instance, chromosome, i)
++            grades.append(grade)
++            i += 1
++        return grades
++
++    def evaluate_population(ga_instance, solution, solution_idx):
++        grade = 0
++        for i in solution:
++            if i != -1:
++                grade += 1
++        return grade
++
++
++    # def fitness_func(ga_instance, solution, solution_idx):
++    # output = numpy.sum(solution * function_inputs)
++    # fitness = 1.0 / numpy.abs(output - desired_output)
++    # return fitness
++
++    def mutation(self, children):
++        for child in children:
++            for empType in self.types_emp_id_dict.keys():
++                if child[empType] != -1:
++                    continue
++                emp_from_same_type_list = self.types_emp_id_dict[empType]
++                random.shuffle(emp_from_same_type_list)
++                success = False
++                for v in emp_from_same_type_list:
++                    if self.is_valid(child, v):
++                        child[int(empType)] = v
++                        success = True
++                        break
++                if not success:
++                    child[empType] = -1
++        return children
++
