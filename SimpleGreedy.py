@@ -73,7 +73,7 @@ def solve(g, types_emp_id_dict):
     NUM_OF_ITER = 200
     best_clique = []
 
-    timeout = time.time() + 2  # 2 sec
+    timeout = time.time() + 0.5  # 2 sec
     # Greedy Algorithm loop
     # for i in range(NUM_OF_ITER):
     while True:

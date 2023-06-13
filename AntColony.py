@@ -23,10 +23,9 @@ import math
 import random
 import time
 
-N_ANTS = 20 #10
-N_ITERATIONS = 5
-PHEROMONE_DEPOSIT = 50 #100
-EVAPORATION_RATE = 0.9
+N_ANTS = 500 # 20, 50, 100, 500
+PHEROMONE_DEPOSIT = 20 # 2, 5, 10, 50
+EVAPORATION_RATE = 0.9 # 0.7, 0.9, 0.95
 
 def solve(graph, d):
     bestClique = ant_colony_optimization(graph, d)
@@ -212,11 +211,6 @@ def _select_next_vertex(g, same_type_vertices, clique, d, pheromone_trail):
         return None
 
     optional_vertices_score_dict = {i: neighbor_score(i, pheromone_trail, clique) for i in optional_vertices}
-    # optional_vertices_score_dict_items = list(optional_vertices_score_dict.items())
-    # random.shuffle(optional_vertices_score_dict_items)
-    # optional_vertices_score_dict = dict(optional_vertices_score_dict_items)
-    # print(neighbors_score_dict)
-    # next_vertex = max(optional_vertices_score_dict, key=optional_vertices_score_dict.get)
     next_vertex = random.choices(list(optional_vertices_score_dict.keys()), weights=list(optional_vertices_score_dict.values()), k=1)[0]
     return next_vertex
 
