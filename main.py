@@ -285,9 +285,9 @@ def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_per
 
 
 if __name__ == "__main__":
-    # levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_", "Medium0.9_", "Medium0.7_", "Medium0.5_", "Hard0.9_", "Hard0.7_",
-    # "Hard0.5_"] algorithms = ["Greedy", "AntColony", "Naive"]
-    levels = ["Hard0.7_"]
+    # levels=["Easy0.9_","Easy0.7_","Easy0.5_","Medium0.9_","Medium0.7_","Medium0.5_","Hard0.9_","Hard0.7_","Hard0.5_"]
+    #algorithms = ["Greedy", "AntColony", "Naive"]
+    levels = ["Medium0.7_"]
     # levels = ["Hard0.9_", "Hard0.7_", "Hard0.5_"]
     # algorithms = ["Greedy", "AntColony"]
     # algorithms = ["Naive"]
@@ -297,7 +297,7 @@ if __name__ == "__main__":
     #algorithms = ["GA_Worstout_ECkity"]
     algorithms = ["GA_deap"]
     # algorithms = ["Greedy"]
-    num_of_files = 1
+    num_of_files = 2
     for level in levels:
         data = Data(level)  # Test/Easy/Medium/Hard
         data.main(level, algorithms, num_of_files)

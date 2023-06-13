@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="work">
+    <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="deap improvement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA_deap.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA_deap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -28,6 +28,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -152,6 +153,8 @@
       <workItem from="1682839076160" duration="23821000" />
       <workItem from="1683187738799" duration="8355000" />
       <workItem from="1683442102862" duration="11180000" />
+      <workItem from="1685434761722" duration="5208000" />
+      <workItem from="1686129465796" duration="2503000" />
     </task>
     <task id="LOCAL‎-00001" summary="fix writing function">
       <created>1672248866501</created>
@@ -216,7 +219,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1682931268684</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎-00010" summary="deap improvement">
+      <created>1684392304611</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1684392304611</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +240,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Noam" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -244,7 +266,8 @@
     <MESSAGE value="test files" />
     <MESSAGE value="additions in GA_WorstOut.py" />
     <MESSAGE value="work" />
-    <option name="LAST_COMMIT_MESSAGE" value="work" />
+    <MESSAGE value="deap improvement" />
+    <option name="LAST_COMMIT_MESSAGE" value="deap improvement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -284,6 +307,16 @@
           <line>29</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA_deap.py</url>
+          <line>220</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA_deap.py</url>
+          <line>173</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -300,6 +333,8 @@
         <watch expression="graph" />
         <watch expression="cur_clique" />
         <watch expression="child[16]" />
+        <watch expression="offspring" />
+        <watch expression="highest_grade_chromosome" />
       </configuration>
       <inline-watch fileUrl="file://$PROJECT_DIR$/AntColony.py" line="33">
         <watch expression="pheromone_trail" language="Python" />
@@ -309,7 +344,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Final_Project$deap.coverage" NAME="GA_deap Coverage Results" MODIFIED="1683199309819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Illegal_population_pyGAD.coverage" NAME="GA_Illegal_population_pyGAD Coverage Results" MODIFIED="1682921330700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Final_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1683463129505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Final_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1685523253880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Worstout_ECkity.coverage" NAME="GA_Worstout_ECkity Coverage Results" MODIFIED="1683190490436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Worstout_ECkity__1_.coverage" NAME="GA_Worstout_ECkity (1) Coverage Results" MODIFIED="1683189364695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
