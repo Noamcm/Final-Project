@@ -7,7 +7,7 @@ import numpy as np
 
 
 class GA_WorstOut:
-    def __init__(self, graph, types_emp_id_dict):
+    def __init__(self, graph, types_emp_id_dict,level_name, algo_types):
         self.graph = graph
         self.types_emp_id_dict = types_emp_id_dict
         self.total_from_each_type = len(types_emp_id_dict[0])

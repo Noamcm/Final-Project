@@ -1,100 +1,76 @@
-#
-# INITIAL_PHEROMONE_VALUE = 1
-# NUM_VERTICES = 10
-#
-# def init_pheromone_matrix():
-#     pheromone_matrix = []
-#     for i in range(1, NUM_VERTICES):
-#         pheromone_matrix[i] = []
-#         for j in range(1, NUM_VERTICES):
-#             pheromone_matrix[i][j] = INITIAL_PHEROMONE_VALUE
-#     return pheromone_matrix
-#
-#
-# def calculate_probability(j, pheromone_matrix, current_clique):
-#   # Calculate the probability of choosing vertex j based on the pheromone matrix and the current clique
-#   # The probability is calculated using the formula:
-#   # p(j) = (tau(j) * eta(j)) / (sum of (tau(k) * eta(k)) for all unvisited vertices k)
-#   # tau(j) is the pheromone value for vertex j
-#   # eta(j) is the heuristic value for vertex j (a measure of the desirability of adding vertex j to the clique)
-#   p = (pheromone_matrix[j] * heuristic_value(j, current_clique)) / sum_of_probabilities(pheromone_matrix,
 import itertools
 import math
 import random
 import time
-
-N_ANTS = 500 # 20, 50, 100, 500
-PHEROMONE_DEPOSIT = 20 # 2, 5, 10, 50
-EVAPORATION_RATE = 0.9 # 0.7, 0.9, 0.95
-
-def solve(graph, d):
-    bestClique = ant_colony_optimization(graph, d)
-    return bestClique
-
-def update_pheromone_matrix(pheromone_trail, best_clique):
-    for i, j in itertools.combinations(best_clique, 2):
-        if (i, j) in pheromone_trail:
-            pheromone_trail[(i, j)] = (1 - EVAPORATION_RATE) * pheromone_trail[(i, j)] + PHEROMONE_DEPOSIT
-        else:
-            pheromone_trail[(j, i)] = (1 - EVAPORATION_RATE) * pheromone_trail[(j, i)] + PHEROMONE_DEPOSIT
+import WriteToCsv
 
 
-def ant_colony_optimization(graph, d):
-    timeout = time.time() + 2  # 2 sec
+class AntColony:
+    def __init__(self, graph, d,level_name, algo_types):
+        self.graph = graph
+        self.d = d
+        self.LIST_N_ANTS = [20, 50, 100, 500]
+        self.LIST_PHEROMONE_DEPOSIT =  [2, 5, 10, 50]
+        self.LIST_EVAPORATION_RATE = [0.7, 0.9, 0.95]
+        self.level = level_name
+        self.algo = algo_types
 
-    MAX_CLIQUE_SIZE = len(d.keys())
-    # Initialize the pheromone trail for all edges
-    pheromone_trail = {(i, j): 1.0 for i, j in graph.edges}
+    def solve(self):
+        for n_ants in self.LIST_N_ANTS:
+            self.N_ANTS = n_ants
+            for pheromone_deposit in self.LIST_PHEROMONE_DEPOSIT:
+                self.PHEROMONE_DEPOSIT = pheromone_deposit
+                for evaporation_rate in self.LIST_EVAPORATION_RATE:
+                    self.EVAPORATION_RATE = evaporation_rate
+                    bestClique = self.ant_colony_optimization(self.graph, self.d)
+                    WriteToCsv.write("_"+str(self.N_ANTS)+"_"+str(self.PHEROMONE_DEPOSIT)+"_"+str(self.EVAPORATION_RATE) ,self.level, self.algo[0] , len(bestClique))
+        return bestClique
 
-    best_clique = set()
-    best_clique_size = 0
-    i=0
-    # Repeat the algorithm for n_iterations
-    # for iteration in range(N_ITERATIONS):
-    while time.time() < timeout:
-    # while True:
-        # Generate n_ants candidate solutions (cliques)
-        # if time.time() > timeout:
-        #     return best_clique
-        worst = set()
-        local_best_clique = set()
-        local_best_clique_size = 0
-        index = 1
-        for _ in range(N_ANTS):
-            if time.time() > timeout:
-                break
-            clique = _generate_clique(graph, d, pheromone_trail)
-            # if len
-            # cliques = [_generate_clique(graph, d, pheromone_trail) for _ in range(N_ANTS)]
+    def update_pheromone_matrix(self,pheromone_trail, best_clique):
+        for i, j in itertools.combinations(best_clique, 2):
+            if (i, j) in pheromone_trail:
+                pheromone_trail[(i, j)] = (1 - self.EVAPORATION_RATE) * pheromone_trail[(i, j)] + self.PHEROMONE_DEPOSIT
+            else:
+                pheromone_trail[(j, i)] = (1 - self.EVAPORATION_RATE) * pheromone_trail[(j, i)] + self.PHEROMONE_DEPOSIT
 
-        # Evaluate the quality of each clique and store the best
-        # for clique in cliques:
-            # print("clique " + str(index) + ": " + str(clique))
-            index += 1
-            # if len(clique) > best_clique_size:
-            if len(clique) > local_best_clique_size:
-                # best_clique = clique
-                local_best_clique = clique
-                # print(best_clique)
 
-                # best_clique_size = len(clique)
-                local_best_clique_size = len(clique)
-                if local_best_clique_size == MAX_CLIQUE_SIZE:
-                    best_clique = local_best_clique
-                    best_clique_size = local_best_clique_size
-                    return best_clique
+    def ant_colony_optimization(self,graph, d):
+        timeout = time.time() + 2  # 2 sec
+        MAX_CLIQUE_SIZE = len(d.keys())
+        # Initialize the pheromone trail for all edges
+        pheromone_trail = {(i, j): 1.0 for i, j in graph.edges}
 
-        # Update the pheromone trail for the edges in the best clique
-        # update_pheromone_matrix(pheromone_trail, best_clique)
-        update_pheromone_matrix(pheromone_trail, local_best_clique)
-        if local_best_clique_size > best_clique_size:
-            print(i, local_best_clique_size)
-            best_clique = local_best_clique
-            best_clique_size = local_best_clique_size
-        i+=1
-        # print("len best_clique: " + str(len(best_clique)))
-    # print("best_clique: " + str(best_clique))
-    return best_clique
+        best_clique = set()
+        best_clique_size = 0
+        i=0
+        # Repeat the algorithm for n_iterations
+        while time.time() < timeout:
+            worst = set()
+            local_best_clique = set()
+            local_best_clique_size = 0
+            index = 1
+            for _ in range(self.N_ANTS):
+                if time.time() > timeout:
+                    break
+                clique = _generate_clique(graph, d, pheromone_trail)
+
+            # Evaluate the quality of each clique and store the best
+                index += 1
+                if len(clique) > local_best_clique_size:
+                    local_best_clique = clique
+                    local_best_clique_size = len(clique)
+                    if local_best_clique_size == MAX_CLIQUE_SIZE:
+                        best_clique = local_best_clique
+                        best_clique_size = local_best_clique_size
+                        return best_clique
+
+            # Update the pheromone trail for the edges in the best clique
+            self.update_pheromone_matrix(pheromone_trail, local_best_clique)
+            if local_best_clique_size > best_clique_size:
+                best_clique = local_best_clique
+                best_clique_size = local_best_clique_size
+            i+=1
+        return best_clique
 
 
 def _generate_clique(graph, d, pheromone_trail):
@@ -105,31 +81,10 @@ def _generate_clique(graph, d, pheromone_trail):
     # choose random root
     for empType in shuffledKeysList:
         empFromSameTypeList = d[empType]
-        # v = _select_next_vertex(graph, empFromSameTypeList, clique, d, pheromone_trail)
         v = _select_next_vertex(graph, empFromSameTypeList, clique, d, pheromone_trail)
         if v is None:
             continue
         clique.add(v)
-        # emp_list = order_by_lottery(graph, empFromSameTypeList, clique, d, pheromone_trail)
-        # if emp_list is None:
-        #     continue
-        # clique.add(emp_list[0])
-        # for v in emp_list:
-        #     if isValid(graph, clique, v):
-        #         clique.add(v)
-        #         break
-
-    # current_vertex = random.choice(list(graph.nodes()))
-    # clique.add(current_vertex)
-    #
-    # while True:
-    #     neighbors = graph[current_vertex]
-    #     next_vertex = _select_next_vertex(graph, neighbors, clique, d, pheromone_trail)
-    #     if next_vertex is None:
-    #         break
-    #
-    #     clique.add(next_vertex)
-    #     current_vertex = next_vertex
     return clique
 
 
@@ -153,42 +108,6 @@ def isValid(graph, clique, new_v):
         if new_v not in graph[v]:
             return False
     return True
-
-# def remove_irrelevant_neighbors(g, neighbors, d, clique):
-#     updated_neighbors = []
-#     for n in neighbors:
-#         valid_neighbor = True
-#
-#         # The clique already contains a member from the same "employee type"
-#         values = []
-#         for i in d.keys():
-#             if d[i].__contains__(n):
-#                 values = d[i]
-#         if any(i in clique for i in values):
-#             break
-#
-#         # The member is not a friend of one of the members of the current clique
-#         if not isValid(g, clique, n):
-#             break
-#
-#         if valid_neighbor:
-#             updated_neighbors.append(n)
-#     return updated_neighbors
-# def _select_next_vertex(g, neighbors, clique, d, pheromone_trail):
-#     """
-#     Select the next vertex to add to the clique using a combination of pheromone trail information
-#     and heuristics (e.g. degree of the vertex)
-#     """
-#     neighbors = remove_irrelevant_neighbors(g, neighbors, d, clique)
-#     if len(neighbors) == 0:
-#         return None
-#
-#     neighbors_score_dict = {i: neighbor_score(i, pheromone_trail, clique) for i in neighbors}
-#     neighbors_score_dict_items = list(neighbors_score_dict.items())
-#     random.shuffle(neighbors_score_dict_items)
-#     neighbors_score_dict = dict(neighbors_score_dict_items)
-#     # print(neighbors_score_dict)
-#     return max(neighbors_score_dict, key=neighbors_score_dict.get)
 
 
 def remove_irrelevant_vertices(g, same_type_vertices, d, clique):
@@ -227,13 +146,9 @@ def order_by_lottery(g, same_type_vertices, clique, d, pheromone_trail):
     lottery_list = []
     for key in optional_vertices_score_dict.keys():
         num_of_tickets = optional_vertices_score_dict[key]
-        # if num_of_tickets != 1.0:
-        #     print(num_of_tickets)
         lottery_list.extend(int(num_of_tickets) * [math.ceil(key)])
     if len(lottery_list) > 1:
-        # print(lottery_list)
         random.shuffle(lottery_list)
-    ordered_emp_list = []
     ordered_emp_list = list(dict.fromkeys(lottery_list))
 
     return ordered_emp_list

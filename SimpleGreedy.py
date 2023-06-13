@@ -63,7 +63,7 @@ def removeSameTypeEmployees(graph, types_emp_id_dict, node):
         for node in nodes_to_remove:
             graph.remove_node(node)
 
-def solve(g, types_emp_id_dict):
+def solve(g, types_emp_id_dict,level_name, algo_types):
     """
     :param graph: nx graph
     :param types_emp_id_dict: { type1 : [empID_1, empID_2, empID_3], type2 : [empID_4, empID_5, empID_6]...}

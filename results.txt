@@ -976,3 +976,21 @@ algoType: GA
 avg time: 2.1926406383514405
 avg size: 10.8
 
+Easy0.9_
+
+algoType: AntColony
+avg time: 0.06642950773239135
+avg size: 10.0
+
+Easy0.9_
+
+algoType: AntColony
+avg time: 0.06874022483825684
+avg size: 10.0
+
+Easy0.7_
+
+algoType: AntColony
+avg time: 0.19521028995513917
+avg size: 10.0
+

@@ -5,10 +5,9 @@ from math import comb
 import networkx as nx
 import numpy as np
 from deap import base, creator, tools
-from collections import UserList
 
 class GA_DEAP_Best_In:
-    def __init__(self, graph, types_emp_id_dict):
+    def __init__(self, graph, types_emp_id_dict,level_name, algo_types):
         self.graph = graph
         self.matrix = nx.to_numpy_array(graph)
         self.types_emp_id_dict = types_emp_id_dict

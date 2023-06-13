@@ -15,7 +15,7 @@ def maximum_clique(graph, d):
             clique = clique_candidate
     return clique
 
-def solve(graph, d):
+def solve(graph, d,level_name, algo_types):
     d_with_none = dict(d)
     for key in d_with_none:
         d_with_none[key].append(-1)

@@ -1,21 +1,18 @@
 import math
+import time
 import pickle
 import random
 import numpy as np
 import networkx as nx
+import seaborn as sns
 from matplotlib import pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
-import seaborn as sns
 
-import AntColony
-import GA
-import GA_WorstOut
-import GA_deap
-import GA_Worstout_ECkity
-import GA_DEAP_Best_In
-import SimpleGreedy
 import Naive
-import time
+import SimpleGreedy
+import AntColony
+import GA_WorstOut
+import GA_DEAP_Best_In
 
 
 class Data:
@@ -235,57 +232,31 @@ class Data:
                     st = time.time()
 
                     match algoType:
+                        case "Naive":
+                            sol = Naive.solve(self.G, self.type_empID_dict,level_name, algo_types)
                         case "Greedy":
                             # Greedy
-                            sol = SimpleGreedy.solve(self.G, self.type_empID_dict)
-
-                        case "GA":
-                            ga = GA.GA(self.G, self.type_empID_dict)
-                            sol = ga.solve()
-                            sol = [i for i in sol if i != -1]
-
-                        # case "GA_GAD":
-                        #     ga_gad = GA_GAD.GA_GAD(self.G, self.type_empID_dict)
-                        #     sol = ga_gad.solve()
-                        #     sol = [i for i in sol if i != -1]
-                        case "GA_deap":
-                            ga = GA_deap.GA_deap(self.G, self.type_empID_dict)
-                            sol = ga.solve()
-                            if sol:
-                                sol = [i for i in sol if i != -1]
-
-                        case "GA_DEAP_Best_In":
-                            ga = GA_DEAP_Best_In.GA_DEAP_Best_In(self.G, self.type_empID_dict)
-                            sol = ga.solve()
-                            if sol:
-                                sol = [i for i in sol if i != -1]
-
+                            sol = SimpleGreedy.solve(self.G, self.type_empID_dict,level_name, algo_types)
                         case "AntColony":
-                            sol = AntColony.solve(self.G, self.type_empID_dict)
-
-                        case "Naive":
-                            sol = Naive.solve(self.G, self.type_empID_dict)
-                        case "GA_WorstOut":
-                            ga = GA_WorstOut.GA_WorstOut(self.G, self.type_empID_dict)
+                            antColony=AntColony.AntColony(self.G, self.type_empID_dict,level_name, algo_types)
+                            sol = antColony.solve()
+                        case "GA_DEAP_WorstOut":
+                            ga = GA_WorstOut.GA_WorstOut(self.G, self.type_empID_dict,level_name, algo_types)
                             sol = ga.solve()
                             sol = [i for i in sol if i != -1]
-                        case "GA_deap":
-                            ga = GA_deap.GA_deap(self.G, self.type_empID_dict)
+                        case "GA_DEAP_Best_In":
+                            ga = GA_DEAP_Best_In.GA_DEAP_Best_In(self.G, self.type_empID_dict,level_name, algo_types)
                             sol = ga.solve()
                             if sol:
                                 sol = [i for i in sol if i != -1]
-                        case "GA_Worstout_ECkity":
-                            ga = GA_Worstout_ECkity.GA_Worstout_ECkity(self.G, self.type_empID_dict)
-                            sol = ga.solve()
-                            sol = [i for i in sol if i != -1]
                         case _:
                             sol = None
 
                     et = time.time()
-                    print('algoType: ', algoType)
-                    print('Execution time:', et - st, 'seconds')
-                    print("***** Best Clique: " + str(sol) + " *****")
-                    print("***** Solution length: " + str(len(sol)) + " *****")
+                    # print('algoType: ', algoType)
+                    # print('Execution time:', et - st, 'seconds')
+                    # print("***** Best Clique: " + str(sol) + " *****")
+                    # print("***** Solution length: " + str(len(sol)) + " *****")
                     run_time[algoType].append(et - st)
                     sol_length[algoType].append(len(sol))
                     self.solution = list(sol)
@@ -293,12 +264,12 @@ class Data:
 
         with open("results.txt", 'a') as f:
             f.write(str(level_name) + '\n\n')
-        print(level_name)
+        # print(level_name)
         for algoType in algo_types:
-            print("algoType: ", algoType)
-            print("avg time: ", sum(run_time[algoType]) / len(run_time[algoType]))
-            print("avg size: ", sum(sol_length[algoType]) / len(sol_length[algoType]))
-            print()
+            # print("algoType: ", algoType)
+            # print("avg time: ", sum(run_time[algoType]) / len(run_time[algoType]))
+            # print("avg size: ", sum(sol_length[algoType]) / len(sol_length[algoType]))
+            # print()
 
             with open("results.txt", 'a') as f:
                 f.write(
@@ -314,22 +285,22 @@ def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_per
 
 
 if __name__ == "__main__":
-    levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_",
-              "Medium0.9_", "Medium0.7_", "Medium0.5_",
-              "Hard0.9_", "Hard0.7_", "Hard0.5_"]
+    # levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_",
+   #           "Medium0.9_", "Medium0.7_", "Medium0.5_",
+     #         "Hard0.9_", "Hard0.7_", "Hard0.5_"]
     # algorithms = ["Greedy", "AntColony", "Naive"]
     # levels = ["Large0.9_", "Large0.7_", "Large0.5_"]
     # levels = ["Medium0.9_", "Medium0.7_", "Medium0.5_"]
     # levels = ["Hard0.7_", "Hard0.5_", "Medium0.5_", "Medium0.7_"]
-    # levels = ["Hard0.5_"]
+    levels = ["Hard0.5_"]
     # levels = ["Medium0.7_"]
-    algorithms = ["Greedy", "AntColony", "GA"]
+    # algorithms = ["Greedy", "AntColony", "GA"]
     # algorithms = ["Greedy", "GA"]
     # algorithms = ["GA"]
     # algorithms = ["Naive"]
     # algorithms = ["Greedy"]
-    # algorithms = ["AntColony"]
-    # algorithms = ["GA_WorstOut"]
+    algorithms = ["AntColony"]
+    # algorithms = ["GA_DEAP_WorstOut"]
     # algorithms = ["GA_deap"]
     # algorithms = ["GA_DEAP_Best_In"]
     #algorithms = ["GA_Worstout_ECkity"]
