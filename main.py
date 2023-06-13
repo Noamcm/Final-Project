@@ -9,8 +9,10 @@ import seaborn as sns
 
 import AntColony
 import GA
-import GA_DEAP_Best_In
+import GA_WorstOut
 import GA_deap
+import GA_Worstout_ECkity
+import GA_DEAP_Best_In
 import SimpleGreedy
 import Naive
 import time
@@ -263,6 +265,19 @@ class Data:
 
                         case "Naive":
                             sol = Naive.solve(self.G, self.type_empID_dict)
+                        case "GA_WorstOut":
+                            ga = GA_WorstOut.GA_WorstOut(self.G, self.type_empID_dict)
+                            sol = ga.solve()
+                            sol = [i for i in sol if i != -1]
+                        case "GA_deap":
+                            ga = GA_deap.GA_deap(self.G, self.type_empID_dict)
+                            sol = ga.solve()
+                            if sol:
+                                sol = [i for i in sol if i != -1]
+                        case "GA_Worstout_ECkity":
+                            ga = GA_Worstout_ECkity.GA_Worstout_ECkity(self.G, self.type_empID_dict)
+                            sol = ga.solve()
+                            sol = [i for i in sol if i != -1]
                         case _:
                             sol = None
 
@@ -309,13 +324,15 @@ if __name__ == "__main__":
     # levels = ["Hard0.5_"]
     # levels = ["Medium0.7_"]
     algorithms = ["Greedy", "AntColony", "GA"]
-    algorithms = ["Greedy", "GA"]
+    # algorithms = ["Greedy", "GA"]
     # algorithms = ["GA"]
     # algorithms = ["Naive"]
     # algorithms = ["Greedy"]
     # algorithms = ["AntColony"]
+    # algorithms = ["GA_WorstOut"]
     # algorithms = ["GA_deap"]
     # algorithms = ["GA_DEAP_Best_In"]
+    #algorithms = ["GA_Worstout_ECkity"]
     num_of_files = 20
     for level in levels:
         data = Data(level)  # Test/Easy/Medium/Hard
