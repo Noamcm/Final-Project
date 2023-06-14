@@ -11,8 +11,8 @@ from matplotlib.colors import LinearSegmentedColormap
 import Naive
 import SimpleGreedy
 import AntColony
-import GA_WorstOut
-import GA_DEAP_Best_In
+import GA_Worst_out
+import GA_Best_In
 
 
 class Data:
@@ -238,14 +238,14 @@ class Data:
                             # Greedy
                             sol = SimpleGreedy.solve(self.G, self.type_empID_dict,level_name, algo_types)
                         case "AntColony":
-                            antColony=AntColony.AntColony(self.G, self.type_empID_dict,level_name, algo_types)
-                            sol = antColony.solve()
-                        case "GA_DEAP_WorstOut":
-                            ga = GA_WorstOut.GA_WorstOut(self.G, self.type_empID_dict,level_name, algo_types)
+                            ant_colony=AntColony.AntColony(self.G, self.type_empID_dict,level_name, algo_types)
+                            sol = ant_colony.solve()
+                        case "GA_Worst_out":
+                            ga = GA_Worst_out.GA_Worst_out(self.G, self.type_empID_dict,level_name, algo_types)
                             sol = ga.solve()
                             sol = [i for i in sol if i != -1]
-                        case "GA_DEAP_Best_In":
-                            ga = GA_DEAP_Best_In.GA_DEAP_Best_In(self.G, self.type_empID_dict,level_name, algo_types)
+                        case "GA_Best_In":
+                            ga = GA_Best_In.GA_Best_In(self.G, self.type_empID_dict,level_name, algo_types)
                             sol = ga.solve()
                             if sol:
                                 sol = [i for i in sol if i != -1]
@@ -285,26 +285,24 @@ def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_per
 
 
 if __name__ == "__main__":
-    # levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_",
-   #           "Medium0.9_", "Medium0.7_", "Medium0.5_",
-     #         "Hard0.9_", "Hard0.7_", "Hard0.5_"]
+    levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_",
+             "Medium0.9_", "Medium0.7_", "Medium0.5_",
+             "Hard0.9_", "Hard0.7_", "Hard0.5_"]
     # algorithms = ["Greedy", "AntColony", "Naive"]
     # levels = ["Large0.9_", "Large0.7_", "Large0.5_"]
     # levels = ["Medium0.9_", "Medium0.7_", "Medium0.5_"]
     # levels = ["Hard0.7_", "Hard0.5_", "Medium0.5_", "Medium0.7_"]
-    levels = ["Hard0.5_"]
+    # levels = ["Hard0.5_"]
     # levels = ["Medium0.7_"]
     # algorithms = ["Greedy", "AntColony", "GA"]
     # algorithms = ["Greedy", "GA"]
     # algorithms = ["GA"]
     # algorithms = ["Naive"]
     # algorithms = ["Greedy"]
-    algorithms = ["AntColony"]
-    # algorithms = ["GA_DEAP_WorstOut"]
-    # algorithms = ["GA_deap"]
-    # algorithms = ["GA_DEAP_Best_In"]
-    #algorithms = ["GA_Worstout_ECkity"]
-    num_of_files = 20
+    # algorithms = ["AntColony"]
+    algorithms = ["GA_Worst_out"]
+    #algorithms = ["GA_Best_In"]
+    num_of_files = 1 #20
     for level in levels:
         data = Data(level)  # Test/Easy/Medium/Hard
         data.main(level, algorithms, num_of_files)

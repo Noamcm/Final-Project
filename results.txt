@@ -994,3 +994,765 @@ algoType: AntColony
 avg time: 0.19521028995513917
 avg size: 10.0
 
+Hard0.5_
+
+algoType: AntColony
+avg time: 93.20078682899475
+avg size: 30.0
+
+Easy0.9_
+
+algoType: AntColony
+avg time: 0.11659669876098633
+avg size: 10.0
+
+Easy0.7_
+
+algoType: AntColony
+avg time: 0.3400700092315674
+avg size: 10.0
+
+Easy0.5_
+
+algoType: AntColony
+avg time: 1.6853883266448975
+avg size: 10.0
+
+Medium0.9_
+
+algoType: AntColony
+avg time: 1.210801362991333
+avg size: 20.0
+
+Medium0.7_
+
+algoType: AntColony
+avg time: 96.16288375854492
+avg size: 16.0
+
+Medium0.5_
+
+algoType: AntColony
+avg time: 31.371689558029175
+avg size: 20.0
+
+Easy0.9_
+
+algoType: AntColony
+avg time: 0.16698980331420898
+avg size: 10.0
+
+Easy0.7_
+
+algoType: AntColony
+avg time: 0.19504141807556152
+avg size: 10.0
+
+Easy0.5_
+
+algoType: AntColony
+avg time: 1.631169080734253
+avg size: 10.0
+
+Medium0.9_
+
+algoType: AntColony
+avg time: 1.242217779159546
+avg size: 20.0
+
+Medium0.7_
+
+algoType: AntColony
+avg time: 96.15460515022278
+avg size: 16.0
+
+Medium0.5_
+
+algoType: AntColony
+avg time: 35.872103214263916
+avg size: 20.0
+
+Hard0.9_
+
+algoType: AntColony
+avg time: 7.504526138305664
+avg size: 30.0
+
+Hard0.7_
+
+algoType: AntColony
+avg time: 96.48947763442993
+avg size: 20.0
+
+Hard0.5_
+
+algoType: AntColony
+avg time: 91.93385863304138
+avg size: 13.0
+
+Easy0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.011207342147827148
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 1.173398494720459
+avg size: 10.0
+
+Easy0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.0030193328857421875
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.0060977935791015625
+avg size: 10.0
+
+Easy0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.003989219665527344
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.012115001678466797
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 2.0707287788391113
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.00997304916381836
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 9.579402446746826
+avg size: 16.0
+
+Medium0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 9.906330823898315
+avg size: 11.0
+
+Hard0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.024300813674926758
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 14.571813344955444
+avg size: 19.0
+
+Hard0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 15.345922470092773
+avg size: 12.0
+
+Easy0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.21704530715942383
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.3423769474029541
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.3656301498413086
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 1.5679810047149658
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 9.533474206924438
+avg size: 15.0
+
+Medium0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 9.910034656524658
+avg size: 10.0
+
+Hard0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 5.924065589904785
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 14.72329068183899
+avg size: 19.0
+
+Hard0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 15.256635427474976
+avg size: 17.0
+
+Easy0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.20388221740722656
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 0.44196248054504395
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 8.161181688308716
+avg size: 8.0
+
+Medium0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 1.5726852416992188
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 9.375025749206543
+avg size: 17.0
+
+Medium0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 9.13107442855835
+avg size: 20.0
+
+Hard0.9_
+
+algoType: GA_DEAP_Worst_out
+avg time: 5.860764026641846
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_DEAP_Worst_out
+avg time: 14.718702793121338
+avg size: 18.0
+
+Hard0.5_
+
+algoType: GA_DEAP_Worst_out
+avg time: 15.275882720947266
+avg size: 13.0
+
+Easy0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 0.04034829139709473
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 2.006742000579834
+avg size: 9.0
+
+Easy0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 2.0027036666870117
+avg size: 7.0
+
+Medium0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 0.06828927993774414
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 2.039818525314331
+avg size: 15.0
+
+Medium0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 2.024197578430176
+avg size: 10.0
+
+Hard0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 0.30152153968811035
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 2.185126304626465
+avg size: 17.0
+
+Hard0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 2.136885643005371
+avg size: 11.0
+
+Easy0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.031869411468506
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.0237038135528564
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.04110312461853
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.077018976211548
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 8.059088230133057
+avg size: 16.0
+
+Medium0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 8.047749042510986
+avg size: 13.0
+
+Hard0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.312391996383667
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 8.215980768203735
+avg size: 19.0
+
+Hard0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 8.157703638076782
+avg size: 12.0
+
+Easy0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.033451080322266
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.021870374679565
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.027764081954956
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.088116407394409
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 8.06197452545166
+avg size: 16.0
+
+Medium0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 8.04615831375122
+avg size: 11.0
+
+Hard0.9_
+
+algoType: GA_DEAP_Best_In
+avg time: 6.40184473991394
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_DEAP_Best_In
+avg time: 8.277530431747437
+avg size: 20.0
+
+Hard0.5_
+
+algoType: GA_DEAP_Best_In
+avg time: 8.150752305984497
+avg size: 12.0
+
+Easy0.9_
+
+algoType: GA_Best_In
+avg time: 6.034978628158569
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_Best_In
+avg time: 6.0263800621032715
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_Best_In
+avg time: 6.026681900024414
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_Best_In
+avg time: 6.080225944519043
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_Best_In
+avg time: 8.058326482772827
+avg size: 16.0
+
+Medium0.5_
+
+algoType: GA_Best_In
+avg time: 8.066540956497192
+avg size: 16.0
+
+Hard0.9_
+
+algoType: GA_Best_In
+avg time: 6.337973356246948
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_Best_In
+avg time: 8.218166828155518
+avg size: 19.0
+
+Hard0.5_
+
+algoType: GA_Best_In
+avg time: 8.167603254318237
+avg size: 12.0
+
+Easy0.9_
+
+algoType: GA_Worst_out
+avg time: 0.42055535316467285
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_Worst_out
+avg time: 0.6619338989257812
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_Worst_out
+avg time: 10.70763635635376
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_Worst_out
+avg time: 3.137127637863159
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_Worst_out
+avg time: 18.93153476715088
+avg size: 16.0
+
+Medium0.5_
+
+algoType: GA_Worst_out
+avg time: 8.000809669494629
+avg size: 20.0
+
+Hard0.9_
+
+algoType: GA_Worst_out
+avg time: 11.644471168518066
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_Worst_out
+avg time: 29.250280380249023
+avg size: 19.0
+
+Hard0.5_
+
+algoType: GA_Worst_out
+avg time: 30.457515478134155
+avg size: 14.0
+
+Easy0.9_
+
+algoType: GA_Worst_out
+avg time: 0.40857481956481934
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_Worst_out
+avg time: 0.6778883934020996
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_Worst_out
+avg time: 6.796717405319214
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_Worst_out
+avg time: 3.1945974826812744
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_Worst_out
+avg time: 18.939533472061157
+avg size: 18.0
+
+Medium0.5_
+
+algoType: GA_Worst_out
+avg time: 18.98966407775879
+avg size: 20.0
+
+Hard0.9_
+
+algoType: GA_Worst_out
+avg time: 11.987706184387207
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_Worst_out
+avg time: 29.56570529937744
+avg size: 19.0
+
+Hard0.5_
+
+algoType: GA_Worst_out
+avg time: 31.13863229751587
+avg size: 17.0
+
+Easy0.9_
+
+algoType: GA_Worst_out
+avg time: 19.65560555458069
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_Worst_out
+avg time: 3.690410852432251
+avg size: 10.0
+
+Easy0.9_
+
+algoType: GA_Worst_out
+avg time: 0.4080181121826172
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_Worst_out
+avg time: 0.855931282043457
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_Worst_out
+avg time: 0.8871438503265381
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_Worst_out
+avg time: 3.1750171184539795
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_Worst_out
+avg time: 18.967734813690186
+avg size: 17.0
+
+Medium0.5_
+
+algoType: GA_Worst_out
+avg time: 9.674860954284668
+avg size: 20.0
+
+Hard0.9_
+
+algoType: GA_Worst_out
+avg time: 11.877751588821411
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_Worst_out
+avg time: 29.53087615966797
+avg size: 20.0
+
+Hard0.5_
+
+algoType: GA_Worst_out
+avg time: 30.899282455444336
+avg size: 12.0
+
+Easy0.9_
+
+algoType: GA_Worst_out
+avg time: 1.8549432754516602
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_Worst_out
+avg time: 3.3203415870666504
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_Worst_out
+avg time: 8.490121126174927
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_Worst_out
+avg time: 14.560079097747803
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_Worst_out
+avg time: 169.55693650245667
+avg size: 17.0
+
+Easy0.9_
+
+algoType: GA_Worst_out
+avg time: 1.872065544128418
+avg size: 10.0
+
+Easy0.9_
+
+algoType: GA_Worst_out
+avg time: 0.4075026512145996
+avg size: 10.0
+
+Easy0.7_
+
+algoType: GA_Worst_out
+avg time: 0.6742594242095947
+avg size: 10.0
+
+Easy0.5_
+
+algoType: GA_Worst_out
+avg time: 3.399653196334839
+avg size: 10.0
+
+Medium0.9_
+
+algoType: GA_Worst_out
+avg time: 3.1654844284057617
+avg size: 20.0
+
+Medium0.7_
+
+algoType: GA_Worst_out
+avg time: 18.936514854431152
+avg size: 17.0
+
+Medium0.5_
+
+algoType: GA_Worst_out
+avg time: 19.86226487159729
+avg size: 13.0
+
+Hard0.9_
+
+algoType: GA_Worst_out
+avg time: 11.823459148406982
+avg size: 30.0
+
+Hard0.7_
+
+algoType: GA_Worst_out
+avg time: 29.471147298812866
+avg size: 20.0
+
+Hard0.5_
+
+algoType: GA_Worst_out
+avg time: 30.692848920822144
+avg size: 13.0
+

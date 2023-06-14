@@ -5,70 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="deap improvement">
-      <change afterPath="$PROJECT_DIR$/WriteToCsv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_05_2023_17_18__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_05_2023_17_18__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntColony.py" beforeDir="false" afterPath="$PROJECT_DIR$/AntColony.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataFunctions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_DEAP_Best_In.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA_DEAP_Best_In.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_WorstOut.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA_WorstOut.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_Worstout_ECkity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_deap.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Naive.py" beforeDir="false" afterPath="$PROJECT_DIR$/Naive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleGreedy.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleGreedy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GA_DEAP_Best_In.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GA_WorstOut.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WriteToCsv.py" beforeDir="false" afterPath="$PROJECT_DIR$/WriteToCsv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Easy0.5_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Easy0.5_.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Easy0.7_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Easy0.7_.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Easy0.9_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Easy0.9_.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Hard0.5_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Hard0.5_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnData/Hard0.7_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Hard0.7_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnData/Hard0.9_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Hard0.9_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnData/Medium0.5_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Medium0.5_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnData/Medium0.7_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Medium0.7_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnData/Medium0.9_.png" beforeDir="false" afterPath="$PROJECT_DIR$/drawnData/Medium0.9_.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/writtenData/Easy0.5_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.5_0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.5_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.5_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.5_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.5_2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_11.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_12.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_15.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_17.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_18.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_19.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.7_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.7_9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_11.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_12.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_15.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_17.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_18.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_19.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writtenData/Easy0.9_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Easy0.9_9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/writtenData/Hard0.5_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Hard0.5_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writtenData/Hard0.5_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Hard0.5_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writtenData/Hard0.7_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Hard0.7_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writtenData/Hard0.9_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Hard0.9_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writtenData/Medium0.5_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Medium0.5_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writtenData/Medium0.7_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Medium0.7_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writtenData/Medium0.9_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/writtenData/Medium0.9_0.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +187,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1683527231100</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎-00009" summary="deap improvement">
+      <created>1686664713137</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686664713137</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +233,8 @@
     <MESSAGE value="add greedy, ga, aco files" />
     <MESSAGE value="test files" />
     <MESSAGE value="add ga + ga Deap&#10;improve aco" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ga + ga Deap&#10;improve aco" />
+    <MESSAGE value="deap improvement" />
+    <option name="LAST_COMMIT_MESSAGE" value="deap improvement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -273,6 +243,11 @@
           <url>file://$PROJECT_DIR$/Naive.py</url>
           <line>37</line>
           <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WriteToCsv.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -297,7 +272,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Final_Project$deap.coverage" NAME="GA_deap Coverage Results" MODIFIED="1683199309819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Illegal_population_pyGAD.coverage" NAME="GA_Illegal_population_pyGAD Coverage Results" MODIFIED="1682921330700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Final_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1686664441167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Final_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1686758546888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Worstout_ECkity.coverage" NAME="GA_Worstout_ECkity Coverage Results" MODIFIED="1683190490436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$GA_Worstout_ECkity__1_.coverage" NAME="GA_Worstout_ECkity (1) Coverage Results" MODIFIED="1683189364695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

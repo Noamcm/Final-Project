@@ -23,7 +23,7 @@ class AntColony:
                 for evaporation_rate in self.LIST_EVAPORATION_RATE:
                     self.EVAPORATION_RATE = evaporation_rate
                     bestClique = self.ant_colony_optimization(self.graph, self.d)
-                    WriteToCsv.write("_"+str(self.N_ANTS)+"_"+str(self.PHEROMONE_DEPOSIT)+"_"+str(self.EVAPORATION_RATE) ,self.level, self.algo[0] , len(bestClique))
+                    WriteToCsv.write(self.algo[0] ,"_"+str(self.N_ANTS)+"_"+str(self.PHEROMONE_DEPOSIT)+"_"+str(self.EVAPORATION_RATE) ,self.level,  len(bestClique))
         return bestClique
 
     def update_pheromone_matrix(self,pheromone_trail, best_clique):
