@@ -7,12 +7,14 @@ import networkx as nx
 import seaborn as sns
 from matplotlib import pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
+from deap import tools
 
 import Naive
 import SimpleGreedy
 import AntColony
 import GA_Worst_out
 import GA_Best_In
+import WriteToCsv
 
 
 class Data:
@@ -24,61 +26,44 @@ class Data:
         self.type_empID_dict = {}
         self.G = None
         self.solution = None
-        if self.difficulty == "Easy":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 10, 10, 0.95
-        elif self.difficulty == "Medium":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.8
-        elif self.difficulty == "Hard":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 100, 0.6
-        elif self.difficulty == "Test":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 5, 5, 0.5
 
         # Easy
-        elif self.difficulty == "Easy0.9_":
+        if self.difficulty == "Easy_0.9":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 10, 10, 0.9
-        elif self.difficulty == "Easy0.7_":
+        elif self.difficulty == "Easy_0.7":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 10, 10, 0.7
-        elif self.difficulty == "Easy0.5_":
+        elif self.difficulty == "Easy_0.5":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 10, 10, 0.5
 
         # Medium
-        elif self.difficulty == "Medium0.9_":
+        elif self.difficulty == "Medium_0.9":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.9
-        elif self.difficulty == "Medium0.7_":
+        elif self.difficulty == "Medium_0.7":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.7
-        elif self.difficulty == "Medium0.5_":
+        elif self.difficulty == "Medium_0.5":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.5
 
         # Hard
         elif self.difficulty == "Hard0.95_":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.95
-        elif self.difficulty == "Hard0.9_":
+        elif self.difficulty == "Hard_0.9":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.9
-        elif self.difficulty == "Hard0.7_":
+        elif self.difficulty == "Hard_0.7":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.7
-        elif self.difficulty == "Hard0.5_":
+        elif self.difficulty == "Hard_0.5":
             self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.5
 
-        # Large
-        elif self.difficulty == "Large0.95_":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 60, 30, 0.95
-        elif self.difficulty == "Large0.9_":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 60, 30, 0.9
-        elif self.difficulty == "Large0.7_":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 60, 30, 0.7
-        elif self.difficulty == "Large0.5_":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 60, 30, 0.5
-
-
-        elif self.difficulty == "AI_Medium":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 15, 15, 0.8
-        elif self.difficulty == "AI_Hard":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 20, 20, 0.7
-        elif self.difficulty == "AI_VeryHard":
-            self.num_of_job_types, self.num_of_employees, self.friendship_percentage = 30, 30, 0.8
         else:
             print("please insert one of the following: \"easy\" / \"medium\" / \"hard\"")
             return
+
+        # algorithms data:
+        self.population_sizes = [50,100,200,500]
+        self.crossovers =[tools.cxUniform,tools.cxTwoPoint]
+
+        self.LIST_N_ANTS = [20, 50, 100, 500]
+        self.LIST_PHEROMONE_DEPOSIT =  [2, 5, 10, 50]
+        self.LIST_EVAPORATION_RATE = [0.7, 0.9, 0.95]
 
     def create_data(self, index):
         writeMetaData(self.difficulty, self.num_of_job_types, self.num_of_employees, self.friendship_percentage)
@@ -113,33 +98,33 @@ class Data:
             if self.matrix[choice[0]][choice[1]] == 0:
                 self.matrix[choice[0]][choice[1]] = 1
                 counter += 1
-        np.savetxt("writtenData/" + self.difficulty + str(index) + ".txt", self.matrix, delimiter=",", fmt="%d")
+        np.savetxt("Data/writtenData/" + self.difficulty + str(index) + ".txt", self.matrix, delimiter=",", fmt="%d")
         return
 
     def write_dict_data(self):
         for i in range(self.num_of_job_types):
             self.type_empID_dict[i] = list(
                 np.arange(i * self.num_of_employees, i * self.num_of_employees + self.num_of_employees, 1, int))
-        f = open("typeDictData/" + self.difficulty + ".pkl", "wb")
+        f = open("Data/typeDictData/" + self.difficulty + ".pkl", "wb")
         pickle.dump(self.type_empID_dict, f)
         f.close()
         return self.type_empID_dict
 
     def read_data(self, index):
         try:
-            self.matrix = np.loadtxt("writtenData/" + self.difficulty + str(index) + ".txt", delimiter=",").astype(
+            self.matrix = np.loadtxt("Data/writtenData/" + self.difficulty + str(index) + ".txt", delimiter=",").astype(
                 int)  # reads as int instead float
             self.type_empID_dict = self.read_dict_data()
             self.read_meta_data()
         except OSError:
-            print("File name does not exist")
+            print(f"File name Data/writtenData/ {self.difficulty,str(index)}  .txt does not exist")
         except Exception as e:
             print(e)
         return
 
     def read_dict_data(self):
         try:
-            file_to_read = open("typeDictData/" + self.difficulty + ".pkl", "rb")
+            file_to_read = open("Data/typeDictData/" + self.difficulty + ".pkl", "rb")
             self.type_empID_dict = pickle.load(file_to_read)
         except Exception as e:
             print("readDictData")
@@ -169,8 +154,7 @@ class Data:
         colorbar.set_ticklabels(["Symmetry\nunnecessary", "Same job type", "Not friends", "Friends"])
         plt.plot([], [], ' ', label='Types: ' + str(self.num_of_job_types)+'\n' + 'Employees: ' + str(self.num_of_employees)+ '\n' + 'Friendship pct: '+ str(int(self.friendship_percentage*100))+'%')
         plt.legend(loc=3)
-        plt.savefig("drawnData/" + self.difficulty + ".png", bbox_inches="tight")
-        #plt.show()
+        plt.savefig("Data/drawnData/" + self.difficulty + ".png", bbox_inches="tight")
         plt.clf()
         plt.figure().clear()
         plt.close()
@@ -206,9 +190,8 @@ class Data:
         plt.legend([lines[2]],[lines[2].get_label()],loc=4)
         plt.gca().add_artist(legend1)
 
-        plt.savefig("graphData/" + self.difficulty + ".png", bbox_inches="tight")
+        plt.savefig("Results/graphData/" + self.difficulty + ".png", bbox_inches="tight")
 
-        #plt.show()
         plt.clf()
         plt.figure().clear()
         plt.close()
@@ -216,6 +199,7 @@ class Data:
     def main(self, level_name, algo_types, num_of_files):
         sol_length = {}
         run_time = {}
+        solutions={}
         for a in algo_types:
             sol_length[a] = []
             run_time[a] = []
@@ -228,6 +212,8 @@ class Data:
                 self.G = self.to_graph()
 
                 for algoType in algo_types:
+                    if algoType not in solutions:
+                        solutions[algoType] = {}
                     # get the start time
                     st = time.time()
 
@@ -235,74 +221,61 @@ class Data:
                         case "Naive":
                             sol = Naive.solve(self.G, self.type_empID_dict,level_name, algo_types)
                         case "Greedy":
-                            # Greedy
-                            sol = SimpleGreedy.solve(self.G, self.type_empID_dict,level_name, algo_types)
+                            sol = SimpleGreedy.solve(self.G, self.type_empID_dict)
                         case "AntColony":
-                            ant_colony=AntColony.AntColony(self.G, self.type_empID_dict,level_name, algo_types)
-                            sol = ant_colony.solve()
+                            for n_ants in self.LIST_N_ANTS:
+                                for pheromone_deposit in self.LIST_PHEROMONE_DEPOSIT:
+                                    for evaporation_rate in self.LIST_EVAPORATION_RATE:
+                                        parameters=str(n_ants)+"_"+str(pheromone_deposit)+"_"+str(evaporation_rate)+"_"+level_name
+                                        if parameters not in solutions[algoType]:
+                                            solutions[algoType][parameters] = []
+                                        ant_colony=AntColony.AntColony(self.G, self.type_empID_dict,level_name, algo_types,n_ants,pheromone_deposit,evaporation_rate)
+                                        sol_len = calculate_length(ant_colony.solve())
+                                        solutions[algoType][parameters].append(sol_len)
+                                        print( algoType , parameters , sol_len)
                         case "GA_Worst_out":
-                            ga = GA_Worst_out.GA_Worst_out(self.G, self.type_empID_dict,level_name, algo_types)
-                            sol = ga.solve()
-                            sol = [i for i in sol if i != -1]
+                            for crossover in self.crossovers:
+                                # Define the genetic operators
+                                for population_size in self.population_sizes:
+                                    parameters=str(crossover.__name__)+"_"+str(population_size)+"_"+level_name
+                                    if parameters not in solutions[algoType]:
+                                        solutions[algoType][parameters] = []
+                                    ga = GA_Worst_out.GA_Worst_out(self.G, self.type_empID_dict,level_name, algo_types,crossover,population_size)
+                                    solutions[algoType][parameters].append(calculate_length(ga.solve()))
                         case "GA_Best_In":
-                            ga = GA_Best_In.GA_Best_In(self.G, self.type_empID_dict,level_name, algo_types)
-                            sol = ga.solve()
-                            if sol:
-                                sol = [i for i in sol if i != -1]
+                            for population_size in self.population_sizes:
+                                parameters = str(population_size) + "_" + level_name
+                                if parameters not in solutions[algoType]:
+                                    solutions[algoType][parameters] = []
+                                ga = GA_Best_In.GA_Best_In(self.G, self.type_empID_dict, level_name, algo_types, population_size)
+                                solutions[algoType][parameters].append(calculate_length(ga.solve()))
                         case _:
                             sol = None
 
                     et = time.time()
-                    # print('algoType: ', algoType)
-                    # print('Execution time:', et - st, 'seconds')
-                    # print("***** Best Clique: " + str(sol) + " *****")
-                    # print("***** Solution length: " + str(len(sol)) + " *****")
                     run_time[algoType].append(et - st)
-                    sol_length[algoType].append(len(sol))
-                    self.solution = list(sol)
-                # self.draw_graph()
 
-        with open("results.txt", 'a') as f:
-            f.write(str(level_name) + '\n\n')
-        # print(level_name)
-        for algoType in algo_types:
-            # print("algoType: ", algoType)
-            # print("avg time: ", sum(run_time[algoType]) / len(run_time[algoType]))
-            # print("avg size: ", sum(sol_length[algoType]) / len(sol_length[algoType]))
-            # print()
+        for algoType in solutions:
+            for parameters in solutions[algoType]:
+                solutions[algoType][parameters] =round(sum(solutions[algoType][parameters]) / len(solutions[algoType][parameters]), 2)
 
-            with open("results.txt", 'a') as f:
-                f.write(
-                    "algoType: " + str(algoType) + '\n'
-                    "avg time: " + str(sum(run_time[algoType]) / len(run_time[algoType])) + '\n'
-                    "avg size: " + str(sum(sol_length[algoType]) / len(sol_length[algoType])) + '\n\n'
-                )
+        WriteToCsv.write(solutions)
+
 
 def writeMetaData(difficulty, num_of_job_types, num_of_employees, friendship_percentage):
-    with open("metaData/" + difficulty + ".txt", 'w') as f:
+    with open("Data/metaData/" + difficulty + ".txt", 'w') as f:
         f.write(
             str(num_of_job_types) + "," + str(num_of_employees) + "," + str(friendship_percentage))
 
+def calculate_length(group):
+    return len([i for i in group if i != -1])
 
 if __name__ == "__main__":
-    levels = ["Easy0.9_", "Easy0.7_", "Easy0.5_",
-             "Medium0.9_", "Medium0.7_", "Medium0.5_",
-             "Hard0.9_", "Hard0.7_", "Hard0.5_"]
-    # algorithms = ["Greedy", "AntColony", "Naive"]
-    # levels = ["Large0.9_", "Large0.7_", "Large0.5_"]
-    # levels = ["Medium0.9_", "Medium0.7_", "Medium0.5_"]
-    # levels = ["Hard0.7_", "Hard0.5_", "Medium0.5_", "Medium0.7_"]
-    # levels = ["Hard0.5_"]
-    # levels = ["Medium0.7_"]
-    # algorithms = ["Greedy", "AntColony", "GA"]
-    # algorithms = ["Greedy", "GA"]
-    # algorithms = ["GA"]
-    # algorithms = ["Naive"]
-    # algorithms = ["Greedy"]
-    # algorithms = ["AntColony"]
-    algorithms = ["GA_Worst_out"]
-    #algorithms = ["GA_Best_In"]
-    num_of_files = 1 #20
+    levels = ["Easy_0.9", "Easy_0.7", "Easy_0.5",
+             "Medium_0.9", "Medium_0.7", "Medium_0.5",
+             "Hard_0.9", "Hard_0.7", "Hard_0.5"]
+    algorithms = ["Greedy", "Naive", "AntColony", "GA_Worst_out", "GA_Best_In"]
+    num_of_files = 20
     for level in levels:
         data = Data(level)  # Test/Easy/Medium/Hard
         data.main(level, algorithms, num_of_files)

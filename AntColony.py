@@ -6,24 +6,17 @@ import WriteToCsv
 
 
 class AntColony:
-    def __init__(self, graph, d,level_name, algo_types):
+    def __init__(self, graph, d,level_name, algo_types,n_ants,pheromone_deposit,evaporation_rate):
         self.graph = graph
         self.d = d
-        self.LIST_N_ANTS = [20, 50, 100, 500]
-        self.LIST_PHEROMONE_DEPOSIT =  [2, 5, 10, 50]
-        self.LIST_EVAPORATION_RATE = [0.7, 0.9, 0.95]
         self.level = level_name
         self.algo = algo_types
+        self.N_ANTS = n_ants
+        self.PHEROMONE_DEPOSIT = pheromone_deposit
+        self.EVAPORATION_RATE = evaporation_rate
 
     def solve(self):
-        for n_ants in self.LIST_N_ANTS:
-            self.N_ANTS = n_ants
-            for pheromone_deposit in self.LIST_PHEROMONE_DEPOSIT:
-                self.PHEROMONE_DEPOSIT = pheromone_deposit
-                for evaporation_rate in self.LIST_EVAPORATION_RATE:
-                    self.EVAPORATION_RATE = evaporation_rate
-                    bestClique = self.ant_colony_optimization(self.graph, self.d)
-                    WriteToCsv.write(self.algo[0] ,"_"+str(self.N_ANTS)+"_"+str(self.PHEROMONE_DEPOSIT)+"_"+str(self.EVAPORATION_RATE) ,self.level,  len(bestClique))
+        bestClique = self.ant_colony_optimization(self.graph, self.d)
         return bestClique
 
     def update_pheromone_matrix(self,pheromone_trail, best_clique):
@@ -43,6 +36,7 @@ class AntColony:
         best_clique = set()
         best_clique_size = 0
         i=0
+
         # Repeat the algorithm for n_iterations
         while time.time() < timeout:
             worst = set()
