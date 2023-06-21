@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="test files">
+    <list default="true" id="818eddcb-9e9e-4ba7-9d34-5a27dac6d368" name="Changes" comment="writing summery data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntColony.py" beforeDir="false" afterPath="$PROJECT_DIR$/AntColony.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataFunctions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_DEAP_Best_In.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_WorstOut.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_Worstout_ECkity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_deap.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GP/SymbolicRegTest.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GP/SymbolicRegressionEvaluator.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GP/TEP.py" beforeDir="false" />
@@ -101,7 +95,7 @@
       <change beforePath="$PROJECT_DIR$/GP/eckity/termination_checkers/threshold_from_target_termination_checker.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Naive.py" beforeDir="false" afterPath="$PROJECT_DIR$/Naive.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SimpleGreedy.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleGreedy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WriteToCsv.py" beforeDir="false" afterPath="$PROJECT_DIR$/WriteToCsv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Easy0.5_.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Easy0.7_.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Easy0.9_.png" beforeDir="false" />
@@ -115,18 +109,18 @@
       <change beforePath="$PROJECT_DIR$/drawnData/Medium0.5_.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Medium0.7_.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/drawnData/Medium0.9_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawnData/Test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Easy0.5_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Easy0.7_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Easy0.9_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Hard0.5_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Hard0.7_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Hard0.95_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Hard0.9_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Medium0.5_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Medium0.7_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Medium0.9_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphData/Test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawnData/Test.png" beforeDir="false" afterPath="$PROJECT_DIR$/Data/drawnData/Test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Easy0.5_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Easy0.5_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Easy0.7_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Easy0.7_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Easy0.9_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Easy0.9_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Hard0.5_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Hard0.5_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Hard0.7_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Hard0.7_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Hard0.95_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Hard0.95_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Hard0.9_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Hard0.9_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Medium0.5_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Medium0.5_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Medium0.7_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Medium0.7_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Medium0.9_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Medium0.9_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphData/Test.png" beforeDir="false" afterPath="$PROJECT_DIR$/Results/graphData/Test.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metaData/Easy0.5_.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/metaData/Easy0.7_.txt" beforeDir="false" />
@@ -141,8 +135,7 @@
       <change beforePath="$PROJECT_DIR$/metaData/Medium0.5_.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/metaData/Medium0.7_.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/metaData/Medium0.9_.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/metaData/Test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metaData/Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/metaData/Test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/typeDictData/Easy0.5_.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/typeDictData/Easy0.7_.pkl" beforeDir="false" />
@@ -157,7 +150,7 @@
       <change beforePath="$PROJECT_DIR$/typeDictData/Medium0.5_.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/typeDictData/Medium0.7_.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/typeDictData/Medium0.9_.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/typeDictData/Test.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/typeDictData/Test.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Data/typeDictData/Test.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/writtenData/Easy0.5_0.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/writtenData/Easy0.5_1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/writtenData/Easy0.5_10.txt" beforeDir="false" />
@@ -1100,7 +1093,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Noam" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -1130,76 +1123,12 @@
       <recent name="C:\Users\NOAMCO1\Documents\GitHub\Final-Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NOAMCO1\Documents\GitHub\Final-Project\Data" />
+      <recent name="C:\Users\NOAMCO1\Documents\GitHub\Final-Project\Results" />
       <recent name="C:\Users\NOAMCO1\Documents\GitHub\Final-Project" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="GA_Worstout_ECkity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Final-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\NOAMCO1\Documents\GitHub\Final-Project\GA_Worstout_ECkity.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GA_deap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Final-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\NOAMCO1\Documents\GitHub\Final-Project\GA_deap.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestFiles" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Final-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\NOAMCO1\Documents\GitHub\Final-Project\TestFiles.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Final-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1222,42 +1151,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Final-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.TestFiles" />
-      <item itemvalue="Python.test" />
-      <item itemvalue="Python.GA_deap" />
-      <item itemvalue="Python.GA_Worstout_ECkity" />
-      <item itemvalue="Python.main" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.GA_Worstout_ECkity" />
-        <item itemvalue="Python.GA_deap" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.TestFiles" />
       </list>
     </recent_temporary>
   </component>
@@ -1279,6 +1175,8 @@
       <workItem from="1683442102862" duration="11180000" />
       <workItem from="1685434761722" duration="5208000" />
       <workItem from="1686129465796" duration="2503000" />
+      <workItem from="1686811383829" duration="1040000" />
+      <workItem from="1686813244519" duration="15710000" />
     </task>
     <task id="LOCAL‎-00001" summary="fix writing function">
       <created>1672248866501</created>
@@ -1336,7 +1234,21 @@
       <option name="project" value="LOCAL‎" />
       <updated>1683527231100</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎-00009" summary="deap improvement">
+      <created>1686664713137</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686664713137</updated>
+    </task>
+    <task id="LOCAL‎-00010" summary="writing summery data">
+      <created>1686758860102</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686758860102</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1375,7 +1287,9 @@
     <MESSAGE value="add greedy, ga, aco files" />
     <MESSAGE value="test files" />
     <MESSAGE value="add ga + ga Deap&#10;improve aco" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ga + ga Deap&#10;improve aco" />
+    <MESSAGE value="deap improvement" />
+    <MESSAGE value="writing summery data" />
+    <option name="LAST_COMMIT_MESSAGE" value="writing summery data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1386,14 +1300,14 @@
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/Lib/site-packages/examples/vectorga/knapsack/knapsack_evaluator.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="80" />
+          <url>file://$PROJECT_DIR$/WriteToCsv.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/Lib/site-packages/examples/vectorga/knapsack/knapsack_evaluator.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="81" />
+          <url>file://$PROJECT_DIR$/WriteToCsv.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1409,11 +1323,10 @@
         <watch expression="matrix.shape" />
         <watch expression="a" />
         <watch expression="graph" />
-        <watch expression="cur_clique" />
-        <watch expression="child[16]" />
-        <watch expression="offspring" />
-        <watch expression="highest_grade_chromosome" />
       </configuration>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/AntColony.py" line="40">
+        <watch expression="pheromone_trail" language="Python" />
+      </inline-watch>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
