@@ -24,4 +24,4 @@ The implementation of Ant Colony Optimization algorithm can be found in the `Ant
 
 ## Genetic Algorithms
 
-The implementation of Genetic Algorithms can be found in the `GA_Best_In.py` and ``GA_Best_In.py` .py` file. It provides a flexible framework for solving optimization problems using GA. You can define your own chromosome representation, fitness evaluation function, selection strategy, crossover operator, and mutation operator to tailor the algorithm to your problem domain.
+The implementation of Genetic Algorithms can be found in the `GA_Best_In.py` and `GA_Worst_out.py` file. It provides a flexible framework for solving optimization problems using GA. You can define your own chromosome representation, fitness evaluation function, selection strategy, crossover operator, and mutation operator to tailor the algorithm to your problem domain.
