@@ -15,11 +15,10 @@ def maximum_clique(graph, d):
             clique = clique_candidate
     return clique
 
-def solve(graph, d):
+def solve(graph, d,level_name, algo_types):
     d_with_none = dict(d)
     for key in d_with_none:
         d_with_none[key].append(-1)
-    # clique = maximum_clique(graph, d_with_none)
     clique = mx(graph)
     return clique
 
@@ -34,10 +33,7 @@ def is_valid_clique(graph, clique):
 
 
 def mx(graph):
-    print("mx")
     best_clique = nx.make_max_clique_graph(graph)
     clique_lists = list(nx.find_cliques(graph))
     best_clique = max(clique_lists, key=len)
-    print(best_clique)
-    print(len(best_clique))
     return best_clique
